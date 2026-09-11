@@ -26,12 +26,15 @@ public partial class Player : CharacterBody3D
 	Label3D label;
 
 	RayCast3D floorChecker;
+	AudioStreamPlayer boingSound;
 
 	bool jumpInputOk = false;
 	
 	double baseJumpForce = 10.0;
 	double jumpAddition = 2.0;
 	double jumpForceReset = 10.0;
+
+	Random random = new Random();
 
 	public override void _Ready()
 	{
@@ -50,6 +53,7 @@ public partial class Player : CharacterBody3D
 		label.Text = inputPrefix.ToUpper();
 
 		floorChecker = GetNode<RayCast3D>("RayCast3D");
+		boingSound = GetNode<AudioStreamPlayer>("Boing");
 	}
 
 	public override void _Process(double delta)
@@ -77,7 +81,6 @@ public partial class Player : CharacterBody3D
 				baseJumpForce += jumpAddition;
 				fallVelocity = baseJumpForce;
 				jumpInputOk = false;
-				return;
 			}
 			else
 			{
@@ -85,13 +88,16 @@ public partial class Player : CharacterBody3D
 				fallVelocity = baseJumpForce;
 			}
 
-			if (Input.IsActionJustPressed(jumpInput))
+			boingSound.PitchScale = (float)random.NextDouble() + 0.5f;
+			boingSound.Play();
+
+			/*if (Input.IsActionJustPressed(jumpInput))
 			{
 				fallVelocity = jumpForce;
 				return;
-			}
+			}*/
 
-			fallVelocity = 0.0;
+			//fallVelocity = 0.0;
 		}
 		else
 		{
