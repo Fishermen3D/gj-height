@@ -26,7 +26,9 @@ public partial class Player : CharacterBody3D
 	Label3D label;
 
 	RayCast3D floorChecker;
-	AudioStreamPlayer boingSound;
+	AudioStreamPlayer boingSoundPlayer1;
+	AudioStreamPlayer boingSoundPlayer2;
+	AudioStreamPlayer soundToPlay;
 
 	bool jumpInputOk = false;
 	
@@ -53,7 +55,16 @@ public partial class Player : CharacterBody3D
 		label.Text = inputPrefix.ToUpper();
 
 		floorChecker = GetNode<RayCast3D>("RayCast3D");
-		boingSound = GetNode<AudioStreamPlayer>("Boing");
+		boingSoundPlayer1 = GetNode<AudioStreamPlayer>("BoingPlayerOne");
+		boingSoundPlayer2 = GetNode<AudioStreamPlayer>("BoingPlayerTwo");
+
+		if(inputPrefix == "p1")
+		{
+			soundToPlay = boingSoundPlayer1;
+		}else if (inputPrefix == "p2")
+		{
+			soundToPlay = boingSoundPlayer2;
+		}
 	}
 
 	public override void _Process(double delta)
@@ -88,8 +99,8 @@ public partial class Player : CharacterBody3D
 				fallVelocity = baseJumpForce;
 			}
 
-			boingSound.PitchScale = (float)random.NextDouble() + 0.5f;
-			boingSound.Play();
+			soundToPlay.PitchScale = (float)random.NextDouble() + 0.5f;
+			soundToPlay.Play();
 
 			/*if (Input.IsActionJustPressed(jumpInput))
 			{
