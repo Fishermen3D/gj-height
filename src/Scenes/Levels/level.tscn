@@ -35,5 +35,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1, 0)
 inputPrefix = "p1"
 
 [node name="Player2" parent="." unique_id=811178300 instance=ExtResource("3_yjxcc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3000001, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3000001, 1.0364046, 0)
 inputPrefix = "p2"
+
+[node name="PlayerGauges" type="CanvasLayer" parent="." unique_id=955735046]
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerGauges" unique_id=1221375217]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerGauges/MarginContainer" unique_id=193038928]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Player1Health" type="ProgressBar" parent="PlayerGauges/MarginContainer/HBoxContainer" unique_id=1218493168]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 85.99
+fill_mode = 1
+
+[node name="Label" type="Label" parent="PlayerGauges/MarginContainer/HBoxContainer" unique_id=807499479]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "60"
+
+[node name="Player2Health" type="ProgressBar" parent="PlayerGauges/MarginContainer/HBoxContainer" unique_id=1174322228]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 90.0
