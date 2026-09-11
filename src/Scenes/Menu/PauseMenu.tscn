@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dg3ulcqbux6pt" path="res://Scripts/Menus/PauseMenu.cs" id="1_0vmhm"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=62451831 node_paths=PackedStringArray("quitGameButton")]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=62451831 node_paths=PackedStringArray("quitGameButton", "resumeGameButton")]
 layer = 10
 script = ExtResource("1_0vmhm")
 quitGameButton = NodePath("PauseMenu/ColorRect/MarginContainer/VBoxContainer/QuitButton")
+resumeGameButton = NodePath("PauseMenu/ColorRect/MarginContainer/VBoxContainer/ResumeButton")
 
 [node name="PauseMenu" type="Control" parent="." unique_id=1869624255]
 layout_mode = 3

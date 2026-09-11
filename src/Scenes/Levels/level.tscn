@@ -2,19 +2,38 @@
 
 [ext_resource type="Script" uid="uid://b6qf4gjv7qo6q" path="res://Scripts/Misc/Level.cs" id="1_f1n8c"]
 [ext_resource type="Environment" uid="uid://dmm8gd344rpmm" path="res://Misc/LevelEnvironment.tres" id="2_7x7pb"]
+[ext_resource type="PackedScene" uid="uid://4g8pt6amnve1" path="res://Scenes/Characters/Player.tscn" id="3_yjxcc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hm387"]
+size = Vector3(40, 1, 10)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hm387"]
-size = Vector2(10, 10)
+size = Vector2(40, 10)
 
 [node name="Level" type="Node3D" unique_id=2069482505]
 script = ExtResource("1_f1n8c")
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=552307794]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=2101684286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_hm387")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1118646342]
 mesh = SubResource("PlaneMesh_hm387")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1170409250]
 transform = Transform3D(0.6139149, -0.4422463, 0.6538553, 0, 0.82832325, 0.5602506, -0.7893722, -0.34394622, 0.50851995, 3.3988204, 8.097286, 0)
+shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1883675819]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 3, 5)
+transform = Transform3D(1, 0, 0, 0, 0.9977573, -0.066935904, 0, 0.066935904, 0.9977573, 0, 2.3487525, 9.015394)
 environment = ExtResource("2_7x7pb")
+
+[node name="Player1" parent="." unique_id=590308953 instance=ExtResource("3_yjxcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1, 0)
+inputPrefix = "p1"
+
+[node name="Player2" parent="." unique_id=811178300 instance=ExtResource("3_yjxcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3000001, 1, 0)
+inputPrefix = "p2"

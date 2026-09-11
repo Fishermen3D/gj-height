@@ -5,6 +5,7 @@ public partial class PauseMenu : CanvasLayer
 {
 	
 	[Export] Button quitGameButton;
+	[Export] Button resumeGameButton;
 
 	public Node gameplayNode;
 	public SceneManager sceneManager;
@@ -16,7 +17,14 @@ public partial class PauseMenu : CanvasLayer
 	{
 		Hide();
 
+		resumeGameButton.Pressed += ResumeGame;
 		quitGameButton.Pressed += ReturnToMenu;
+	}
+
+	private void ResumeGame()
+	{
+		Hide();
+		gameplayNode.ProcessMode = ProcessModeEnum.Inherit;
 	}
 
 	private void ReturnToMenu()
