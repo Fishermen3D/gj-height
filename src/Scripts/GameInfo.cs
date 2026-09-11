@@ -1,15 +1,54 @@
 using Godot;
-using System;
 
 public partial class GameInfo : Node3D
 {
-	// Called when the node enters the scene tree for the first time.
+
+	public static SceneManager sceneManager;
+
 	public override void _Ready()
 	{
+		SetProcess(false);
+
+		sceneManager = new SceneManager
+		{
+			Name = "SceneManager"
+		};
+		
+		AddChild(sceneManager);
+
+		foreach(Node child in GetTree().Root.GetChildren())
+		{
+			if(child is not GameInfo)
+			{
+				if(child is GameMenu menu)
+				{
+					menu.sceneManager = sceneManager;
+				}
+
+				if(child is GameScene scene)
+				{
+					scene.sceneManager = sceneManager;
+
+					PackedScene pauseScene = GD.Load<PackedScene>("res://Scenes/Menu/PauseMenu.tscn");
+					PauseMenu pauseMenu = pauseScene.Instantiate<PauseMenu>();
+					pauseMenu.gameplayNode = scene;
+					pauseMenu.sceneManager = sceneManager;
+
+					sceneManager.AddChild(pauseMenu);
+				}
+
+				child.CallDeferred("reparent", sceneManager);
+			}
+		}
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public static SceneManager GetSceneManager()
+	{
+		return sceneManager;
+	}
+
 	public override void _Process(double delta)
 	{
+		
 	}
 }
