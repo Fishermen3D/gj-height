@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cofvb21x23c64"]
+
+[ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="1_8erh4"]
+[ext_resource type="Script" uid="uid://dg0d3c20x10yi" path="res://Scripts/Menus/PlayerPicker.cs" id="1_rrqhn"]
+[ext_resource type="Texture2D" uid="uid://d4kxljsqgraue" path="res://icon.svg" id="2_rrqhn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrqhn"]
+
+[node name="PlayerPicker" type="Panel" unique_id=2013229060]
+custom_maximum_size = Vector2(264, -1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rrqhn")
+script = ExtResource("1_rrqhn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=274207686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=59632785]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8erh4")
+theme_override_font_sizes/font_size = 32
+text = "Player"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=244895550]
+custom_minimum_size = Vector2(256, 677)
+custom_maximum_size = Vector2(400, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_rrqhn")
+stretch_mode = 5
+
+[node name="ReadyLabel" type="Label" parent="VBoxContainer" unique_id=1991036545]
+layout_mode = 2
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -169.915)
+offset_transform_rotation = -0.28797933
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("1_8erh4")
+theme_override_font_sizes/font_size = 128
+horizontal_alignment = 1

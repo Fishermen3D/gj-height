@@ -15,7 +15,7 @@ public partial class Player : CharacterBody3D
 		NONE,
 		JELLYFISH,
 		CAT,
-		FOX,
+		BEAR,
 		RABBIT
 	}
 
@@ -82,13 +82,7 @@ public partial class Player : CharacterBody3D
 		myShape = GetNode<CollisionShape3D>("CollisionShape3D");
 		hitShape = GetNode<CollisionShape3D>("Hitbox/CollisionShape3D");
 
-		if(inputPrefix == "p1")
-		{
-			soundToPlay = boingSoundPlayer1;
-		}else if (inputPrefix == "p2")
-		{
-			soundToPlay = boingSoundPlayer2;
-		}
+		soundToPlay = boingSoundPlayer1;
 	}
 
 	public override void _Process(double delta)

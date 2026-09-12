@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://b2na8uo06ws0n"]
 
 [ext_resource type="Script" uid="uid://b6qf4gjv7qo6q" path="res://Scripts/Misc/Level.cs" id="1_f1n8c"]
-[ext_resource type="Environment" uid="uid://dmm8gd344rpmm" path="res://Misc/LevelEnvironment.tres" id="2_7x7pb"]
-[ext_resource type="Script" uid="uid://doad3w20v2mrn" path="res://Scripts/Systems/GameCamera.cs" id="3_lkqqh"]
-[ext_resource type="PackedScene" uid="uid://4g8pt6amnve1" path="res://Scenes/Characters/Player.tscn" id="3_yjxcc"]
-[ext_resource type="PackedScene" uid="uid://6ia788glaqap" path="res://Scenes/UI/PlayerHealth.tscn" id="5_tq1so"]
+[ext_resource type="Texture2D" uid="uid://c328a4la2rkky" path="res://Assets/Images/Backdrop/Bg1.PNG" id="6_rv5g2"]
+[ext_resource type="Texture2D" uid="uid://cyvd2uhopeyxe" path="res://Assets/Images/Backdrop/Bg2.PNG" id="7_lhx7y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hm387"]
 size = Vector3(40, 1, 10)
@@ -28,19 +26,42 @@ mesh = SubResource("PlaneMesh_hm387")
 transform = Transform3D(0.6139149, -0.4422463, 0.6538553, 0, 0.82832325, 0.5602506, -0.7893722, -0.34394622, 0.50851995, 3.3988204, 8.097286, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1883675819]
-transform = Transform3D(1, 0, 0, 0, 0.9977573, -0.066935904, 0, 0.066935904, 0.9977573, 0, 5.2256455, 12.015394)
-environment = ExtResource("2_7x7pb")
-script = ExtResource("3_lkqqh")
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1570483143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 3.3049092, -4.2906456)
+alpha_cut = 2
+texture = ExtResource("6_rv5g2")
 
-[node name="Player1" parent="." unique_id=590308953 instance=ExtResource("3_yjxcc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1, 0)
-characterType = 1
-inputPrefix = "p1"
+[node name="Sprite3D7" type="Sprite3D" parent="." unique_id=116177830]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.957693, 3.3049092, 5.021759)
+alpha_cut = 2
+texture = ExtResource("6_rv5g2")
 
-[node name="Player2" parent="." unique_id=811178300 instance=ExtResource("3_yjxcc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3000001, 1.0364046, 0)
-characterType = 2
-inputPrefix = "p2"
+[node name="Sprite3D8" type="Sprite3D" parent="." unique_id=1757934609]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.125011, 3.3049092, 5.021759)
+alpha_cut = 2
+texture = ExtResource("6_rv5g2")
 
-[node name="PlayerHealth" parent="." unique_id=1538270095 instance=ExtResource("5_tq1so")]
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=435941042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6, 3.3049092, -4.2906456)
+alpha_cut = 2
+texture = ExtResource("6_rv5g2")
+
+[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=1433739186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.621748, 4.9728703, -6.86633)
+alpha_cut = 2
+texture = ExtResource("7_lhx7y")
+
+[node name="Sprite3D4" type="Sprite3D" parent="." unique_id=870571878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.251963, 4.9728703, -6.86633)
+alpha_cut = 2
+texture = ExtResource("7_lhx7y")
+
+[node name="Sprite3D5" type="Sprite3D" parent="." unique_id=1464387839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7273245, 4.9728703, -14.360028)
+alpha_cut = 2
+texture = ExtResource("7_lhx7y")
+
+[node name="Sprite3D6" type="Sprite3D" parent="." unique_id=572622826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.146385, 4.9728703, -14.360028)
+alpha_cut = 2
+texture = ExtResource("7_lhx7y")

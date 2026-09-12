@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Godot;
 
 public partial class GameInfo : Node3D
@@ -6,6 +7,8 @@ public partial class GameInfo : Node3D
 	public static SceneManager sceneManager;
 
 	public int amountOfPlayers = 2;
+
+	public List<Player.CharacterType> characterTypes = [];
 
 	public override void _Ready()
 	{

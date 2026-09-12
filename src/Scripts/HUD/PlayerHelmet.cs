@@ -14,7 +14,7 @@ public partial class PlayerHelmet : Panel
 	Dictionary<Player.CharacterType, string> CharacterPortraits = new()
 	{
 		{ Player.CharacterType.CAT, "res://Assets/Images/tmp_images/Cat.png" },
-		{ Player.CharacterType.FOX, "res://Assets/Images/tmp_images/Fox.png" },
+		{ Player.CharacterType.BEAR, "res://Assets/Images/tmp_images/Fox.png" },
 		{ Player.CharacterType.RABBIT, "res://Assets/Images/tmp_images/Rabbit.png" },
 		{ Player.CharacterType.JELLYFISH, "res://Assets/Images/tmp_images/Jelly.png" }
 	};

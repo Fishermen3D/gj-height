@@ -15,6 +15,8 @@ public partial class PlayerCountPicker : GameMenu
 		twoPlayerButton.Pressed += StartTwoPlayer;
 		threePlayerButton.Pressed += StartThreePlayer;
 		fourPlayerButton.Pressed += StartFourPlayer;
+
+		twoPlayerButton.GrabFocus();
 	}
 
 	private void StartFourPlayer()

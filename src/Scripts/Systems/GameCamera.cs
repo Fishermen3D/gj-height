@@ -9,8 +9,12 @@ public partial class GameCamera : Camera3D
 
 	float followSpeed = 10.0f;
 
+	Vector3 startPosition = new Vector3(0.0f, 6.4f, 13.8f);
+
 	public override void _Ready()
 	{
+		GlobalPosition = startPosition;
+
 		foreach(Node child in GetParent().GetChildren())
 		{
 			if(child is Player player)
@@ -23,7 +27,7 @@ public partial class GameCamera : Camera3D
 	public override void _Process(double delta)
 	{
 		Vector3 centerPoint = GetCenterPointOfPlayers();
-		Vector3 point = new Vector3(centerPoint.X, 5.0f, 12.0f);
+		Vector3 point = new Vector3(centerPoint.X, 6.4f, 13.8f);
 		GlobalPosition = GlobalPosition.Lerp(point, (float)delta * followSpeed);
 	}
 
