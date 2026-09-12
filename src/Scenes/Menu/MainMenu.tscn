@@ -43,6 +43,7 @@ theme_override_constants/separation = 12
 
 [node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1183748906]
 layout_mode = 2
+offset_transform_enabled = true
 text = "Start Game"
 
 [node name="QuitGameButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=98761002]

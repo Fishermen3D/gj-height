@@ -30,12 +30,20 @@ public partial class GameCamera : Camera3D
 	Vector3 GetCenterPointOfPlayers()
 	{
 		Vector3 total = new Vector3();
+		int totalAmount = 0;
 
 		foreach(Player player in players)
 		{
+			if(player.currentState == Player.PlayerState.DEAD){ continue; }
 			total += player.GlobalPosition;
+			totalAmount++;
 		}
 
-		return total / players.Count;
+		return total / totalAmount;
+	}
+
+	public void RemovePlayer(Player player)
+	{
+		players.Remove(player);
 	}
 }

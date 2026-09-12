@@ -10,6 +10,17 @@ public partial class Player : CharacterBody3D
 		DEAD
 	}
 
+	public enum CharacterType
+	{
+		NONE,
+		JELLYFISH,
+		CAT,
+		FOX,
+		RABBIT
+	}
+
+	[Export] public CharacterType characterType = CharacterType.NONE;
+
 	[Export] public string inputPrefix = string.Empty;
 
 	public PlayerState currentState = PlayerState.PLAYING;
@@ -40,6 +51,12 @@ public partial class Player : CharacterBody3D
 
 	Random random = new Random();
 
+	public PlayerHelmet helmet;
+	public GameCamera camera;
+
+	CollisionShape3D myShape;
+	CollisionShape3D hitShape;
+
 	public override void _Ready()
 	{
 		if (string.IsNullOrEmpty(inputPrefix))
@@ -62,6 +79,9 @@ public partial class Player : CharacterBody3D
 		boingSoundPlayer2 = GetNode<AudioStreamPlayer>("BoingPlayerTwo");
 		hitSound = GetNode<AudioStreamPlayer>("Hit");
 
+		myShape = GetNode<CollisionShape3D>("CollisionShape3D");
+		hitShape = GetNode<CollisionShape3D>("Hitbox/CollisionShape3D");
+
 		if(inputPrefix == "p1")
 		{
 			soundToPlay = boingSoundPlayer1;
@@ -77,6 +97,10 @@ public partial class Player : CharacterBody3D
 		{
 			case PlayerState.PLAYING:
 				UpdateMovement(delta);
+				break;
+			
+			case PlayerState.DEAD:
+				UpdateFall(delta);
 				break;
 		}
 	}
@@ -143,6 +167,22 @@ public partial class Player : CharacterBody3D
 		}
 	}
 
+	void UpdateFall(double delta)
+	{
+		Vector3 fallDirection = new Vector3(0.0f, (float)fallVelocity, 0.0f);
+		Velocity = fallDirection;
+		MoveAndSlide();
+
+		if (!IsOnFloor())
+		{
+			fallVelocity -= gravity * delta;
+		}
+		else
+		{
+			fallVelocity = 0.0;
+		}
+	}
+
 	void ResetJumpForce()
 	{
 		baseJumpForce = jumpForceReset;
@@ -157,6 +197,28 @@ public partial class Player : CharacterBody3D
 
 	public void GetHit()
 	{
-		PushDown();
+		if(currentState == PlayerState.DEAD){ return; }
+		
+		if (!helmet.TakeDamage())
+		{
+			PushDown();
+		}
+		else
+		{
+			SetState(PlayerState.DEAD);
+			//camera.RemovePlayer(this);
+		}
+	}
+
+	public void SetState(PlayerState state)
+	{
+		if(currentState == PlayerState.DEAD){ return; }
+		currentState = state;
+
+		if(state == PlayerState.DEAD)
+		{
+			//myShape.Disabled = true;
+			hitShape.Disabled = true;
+		}
 	}
 }

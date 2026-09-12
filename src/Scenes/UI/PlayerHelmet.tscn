@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dfuxpa1bjbxog"]
+
+[ext_resource type="Texture2D" uid="uid://d4kxljsqgraue" path="res://icon.svg" id="1_3w4jr"]
+[ext_resource type="Script" uid="uid://0rtt4e21hv5m" path="res://Scripts/HUD/PlayerHelmet.cs" id="1_deb6j"]
+
+[node name="PlayerHelmet" type="Panel" unique_id=684441522]
+size_flags_horizontal = 3
+script = ExtResource("1_deb6j")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=1795619789]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.5
+offset_right = 66.5
+offset_bottom = 155.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=928497561]
+layout_mode = 2
+text = "Player x"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1090871237]
+custom_maximum_size = Vector2(133, 128)
+layout_mode = 2
+texture = ExtResource("1_3w4jr")
