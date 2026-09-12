@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bk2pjtb1kg7o2"]
+
+[ext_resource type="Texture2D" uid="uid://lnqhjqdmfn64" path="res://Assets/Images/CharacterAtlas.png" id="1_twhnx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lak7"]
+atlas = ExtResource("1_twhnx")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxoci"]
+atlas = ExtResource("1_twhnx")
+region = Rect2(0, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qctg"]
+atlas = ExtResource("1_twhnx")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twhnx"]
+atlas = ExtResource("1_twhnx")
+region = Rect2(0, 768, 256, 256)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lak7")
+}],
+"loop": 1,
+"name": &"Bear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxoci")
+}],
+"loop": 1,
+"name": &"Cat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qctg")
+}],
+"loop": 1,
+"name": &"Jelly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twhnx")
+}],
+"loop": 1,
+"name": &"Rabbit",
+"speed": 5.0
+}]

@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cndhb85u3vkrm" path="res://Assets/Audio/Effects/hit.wav" id="2_7pt4t"]
 [ext_resource type="AudioStream" uid="uid://d02yni3hvk8tb" path="res://Assets/Audio/Effects/Twang.wav" id="2_o5en2"]
 [ext_resource type="Script" uid="uid://dajx4mujnj171" path="res://Scripts/Characters/PlayerHitbox.cs" id="4_7pt4t"]
+[ext_resource type="SpriteFrames" uid="uid://bk2pjtb1kg7o2" path="res://Misc/CharacterFrames.tres" id="4_7qdam"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hm387"]
 
@@ -50,23 +51,34 @@ font_size = 64
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ModelPivot" unique_id=996855163]
 transform = Transform3D(0.78828555, 0, 0, 0, 0.78828555, 0, 0, 0, 0.78828555, 1.0339831e-09, 0.03537014, -0.04282762)
+visible = false
 mesh = SubResource("CapsuleMesh_hm387")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="ModelPivot" unique_id=587355753]
 transform = Transform3D(0.3569353, 0, 0, 0, 0.3569353, 0, 0, 0, 0.3569353, 1.0339831e-09, 0.27185583, 0.4301437)
+visible = false
 mesh = SubResource("SphereMesh_hm387")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="ModelPivot" unique_id=1474259021]
 transform = Transform3D(-1.5602136e-08, 0.3569353, 0, -0.3569353, -1.5602136e-08, 0, 0, 0, 0.3569353, 1.0339831e-09, -0.086402714, 0.4301437)
+visible = false
 mesh = SubResource("CylinderMesh_yjxcc")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="ModelPivot" unique_id=645824745]
 transform = Transform3D(-1.5602136e-08, 0.3569353, 0, -0.3569353, -1.5602136e-08, 0, 0, 0, 0.3569353, 1.0339831e-09, -0.7090572, 0.19215012)
+visible = false
 mesh = SubResource("CylinderMesh_yjxcc")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="ModelPivot" unique_id=62126088]
 transform = Transform3D(-0.3569353, -3.1204273e-08, 0, 3.008322e-08, -0.34411195, -0.09481454, 8.28895e-09, -0.09481454, 0.34411195, 2.0283348e-08, -0.5403581, 0.286653)
+visible = false
 mesh = SubResource("CylinderMesh_gjot8")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="ModelPivot" unique_id=1568187106]
+transform = Transform3D(0.80409634, 0, 0, 0, 0.80409634, 0, 0, 0, 0.80409634, 0, 0, 0)
+billboard = 1
+sprite_frames = ExtResource("4_7qdam")
+animation = &"Rabbit"
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=2034875653]
 target_position = Vector3(0, -4, 0)

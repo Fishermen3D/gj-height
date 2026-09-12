@@ -6,6 +6,7 @@ public partial class PlayerHelmet : Panel
 {
 	
 	int health = 5;
+	public int playerIndex = 0;
 
 	Label playerNameLabel;
 
@@ -24,6 +25,7 @@ public partial class PlayerHelmet : Panel
 	{
 		SetProcess(false);
 		playerNameLabel = GetNode<Label>("HBoxContainer/Label");
+		playerNameLabel.Text = $"Player {playerIndex}";
 	}
 
 	public void SetCharacter(Player.CharacterType character)

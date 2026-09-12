@@ -12,14 +12,19 @@ public partial class HealthManager : CanvasLayer
 
 		helmetContainer = GetNode<HBoxContainer>("Control/MarginContainer/HBoxContainer");
 
+		int index = 0;
+
 		foreach(Node child in GetParent().GetChildren())
 		{
 			if(child is Player player)
 			{
+				index++;
+
 				PackedScene playerHelmetScene = GD.Load<PackedScene>("res://Scenes/UI/PlayerHelmet.tscn");
 				PlayerHelmet helmet = playerHelmetScene.Instantiate<PlayerHelmet>();
 				player.helmet = helmet;
 				helmet.SetCharacter(player.characterType);
+				helmet.playerIndex = index;
 
 				helmetContainer.AddChild(helmet);
 			}

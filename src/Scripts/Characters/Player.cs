@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Player : CharacterBody3D
 {
@@ -57,6 +58,18 @@ public partial class Player : CharacterBody3D
 	CollisionShape3D myShape;
 	CollisionShape3D hitShape;
 
+	AnimatedSprite3D sprite;
+	StringName characterFrames;
+
+	Dictionary<CharacterType, StringName> spriteFrameGroup = new()
+	{
+		{ CharacterType.NONE, new StringName() },
+		{ CharacterType.CAT, new StringName("Cat") },
+		{ CharacterType.BEAR, new StringName("Bear") },
+		{ CharacterType.RABBIT, new StringName("Rabbit") },
+		{ CharacterType.JELLYFISH, new StringName("Jelly") }
+	};
+
 	public override void _Ready()
 	{
 		if (string.IsNullOrEmpty(inputPrefix))
@@ -81,6 +94,10 @@ public partial class Player : CharacterBody3D
 
 		myShape = GetNode<CollisionShape3D>("CollisionShape3D");
 		hitShape = GetNode<CollisionShape3D>("Hitbox/CollisionShape3D");
+
+		sprite = GetNode<AnimatedSprite3D>("ModelPivot/AnimatedSprite3D");
+		sprite.Play(spriteFrameGroup[characterType]);
+		sprite.Stop();
 
 		soundToPlay = boingSoundPlayer1;
 	}
