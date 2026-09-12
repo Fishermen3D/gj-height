@@ -10,6 +10,11 @@ public partial class Level : GameScene
 
 	AudioStreamPlayer boomSound;
 
+	Label3D matchOverLabel;
+
+	GameCamera camera;
+	HealthManager healthManager;
+
 	public override void _Ready()
 	{
 		PackedScene PlayerScene = GD.Load<PackedScene>("res://Scenes/Characters/Player.tscn");
@@ -28,19 +33,21 @@ public partial class Level : GameScene
 			AddChild(player);
 		}
 
-		PackedScene playerHealthScene =GD.Load<PackedScene>("res://Scenes/UI/PlayerHealth.tscn");
-		HealthManager healthManager = playerHealthScene.Instantiate<HealthManager>();
+		PackedScene playerHealthScene = GD.Load<PackedScene>("res://Scenes/UI/PlayerHealth.tscn");
+		healthManager = playerHealthScene.Instantiate<HealthManager>();
 
 		AddChild(healthManager);
 
 
-		GameCamera camera = new GameCamera();
+		camera = new GameCamera();
 		AddChild(camera);
 
 		winTimer = GetNode<Timer>("WinnerTimer");
 		winTimer.Timeout += GoToWinScreen;
 
 		boomSound = GetNode<AudioStreamPlayer>("Boom");
+		matchOverLabel = GetNode<Label3D>("MatchOverLabel");
+		matchOverLabel.Hide();
 	}
 
 	private void GoToWinScreen()
@@ -90,6 +97,10 @@ public partial class Level : GameScene
 
 			boomSound.Play();
 			winTimer.Start();
+
+			//matchOverLabel.GlobalPosition = new Vector3(camera.GlobalPosition.X, matchOverLabel.GlobalPosition.Y, matchOverLabel.GlobalPosition.Z);
+			matchOverLabel.Show();
+			healthManager.Hide();
 		}
 	}
 

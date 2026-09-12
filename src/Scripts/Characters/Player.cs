@@ -70,6 +70,9 @@ public partial class Player : CharacterBody3D
 
 	Node3D modelPivot;
 
+	double okLength = 0.5;
+	double okTimer = 0.0;
+
 	public static Dictionary<CharacterType, StringName> spriteFrameGroup = new()
 	{
 		{ CharacterType.NONE, new StringName() },
@@ -118,6 +121,16 @@ public partial class Player : CharacterBody3D
 
 	public override void _Process(double delta)
 	{
+		if (jumpInputOk)
+		{
+			okTimer += delta;
+			if(okTimer >= okLength)
+			{
+				jumpInputOk = false;
+				okTimer = 0.0;
+			}
+		}
+
 		switch (currentState)
 		{
 			case PlayerState.PLAYING:
@@ -165,12 +178,18 @@ public partial class Player : CharacterBody3D
 
 			if(fallVelocity < 0.0)
 			{
+				if (Input.IsActionJustPressed(jumpInput))
+				{
+					jumpInputOk = true;
+					okTimer = 0.0;
+				}
+
 				if (floorChecker.IsColliding())
 				{
-					if (Input.IsActionJustPressed(jumpInput))
+					/*if (Input.IsActionJustPressed(jumpInput))
 					{
 						jumpInputOk = true;
-					}
+					}*/
 				}
 			}
 

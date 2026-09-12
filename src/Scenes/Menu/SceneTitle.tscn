@@ -4,12 +4,13 @@
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="2_0w62a"]
 
 [sub_resource type="Curve" id="Curve_0w62a"]
-_data = [Vector2(0.0076923147, 0.07291663), 0.0, 3.5416672, 0, 0, Vector2(1, 0.9895834), 3.8162894, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="SceneTitle" type="Node2D" unique_id=1081435070]
+[node name="SceneTitle" type="Node2D" unique_id=1081435070 node_paths=PackedStringArray("timer")]
 script = ExtResource("1_hjea1")
 slideCurve = SubResource("Curve_0w62a")
+timer = NodePath("Timer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=770372049]
 
@@ -29,9 +30,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
-offset_transform_rotation = 0.28797933
+offset_transform_rotation = 0.34906584
 
-[node name="Label" type="Label" parent="CanvasLayer/SceneTitle" unique_id=399179404]
+[node name="Label" type="Label" parent="CanvasLayer/SceneTitle" unique_id=47103574]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,3 +48,8 @@ text = "Pick a
 Character"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1460029772]
+wait_time = 1.5
+one_shot = true
+autostart = true

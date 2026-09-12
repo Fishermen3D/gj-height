@@ -5,9 +5,6 @@ using System.Collections.Generic;
 public partial class CharacterPicker : GameMenu
 {
 
-	Button startMatchButton;
-	Button returnButton;
-
 	Timer timer;
 
 	HBoxContainer pickerContainer;
@@ -23,13 +20,7 @@ public partial class CharacterPicker : GameMenu
 		base._Ready();
 		SetProcess(true);
 
-		startMatchButton = GetNode<Button>("MarginContainer/VBoxContainer/VBoxContainer/StartMatch");
-		returnButton = GetNode<Button>("MarginContainer/VBoxContainer/VBoxContainer/Back");
-
 		pickerContainer = GetNode<HBoxContainer>("MarginContainer/VBoxContainer/HBoxContainer");
-
-		startMatchButton.Pressed += StartMatch;
-		returnButton.Pressed += ReturnMenu;
 
 		portraits.Add(Player.CharacterType.CAT, GD.Load<Texture2D>("res://Assets/Images/Characters/Cat.PNG"));
 		portraits.Add(Player.CharacterType.BEAR, GD.Load<Texture2D>("res://Assets/Images/Characters/Bear.PNG"));
@@ -50,8 +41,6 @@ public partial class CharacterPicker : GameMenu
 
 		timer = GetNode<Timer>("DelayTimer");
 		timer.Timeout += StartMatch;
-
-		startMatchButton.GrabFocus();
 
 		gameInfo.characterTypes.Clear();
 	}

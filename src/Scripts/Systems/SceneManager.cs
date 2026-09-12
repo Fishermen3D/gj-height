@@ -17,6 +17,8 @@ public partial class SceneManager : Node
 
 	public TransitionType currentTransition = TransitionType.INSTANT;
 
+	//public TitleLabel titleLabel;
+
 	public override void _Ready()
 	{
 		SetProcess(false);
@@ -38,12 +40,13 @@ public partial class SceneManager : Node
 			case TransitionType.MATRIX:
 				currentTransition = transitionType;
 				FreezeCurrentScene();
-
+				
 				Image image = GetViewport().GetTexture().GetImage();
 				Texture2D texture = ImageTexture.CreateFromImage(image);
 
 				matrixTransitionRect.Reset(texture);
 				matrixTransitionRect.Show();
+				
 
 				LoadScene(scenePath, message);
 				SetProcess(true);
@@ -81,6 +84,11 @@ public partial class SceneManager : Node
 			sceneTitle.sceneToLoad = scenePath;
 			sceneTitle.sceneManager = this;
 		}
+
+		/*if (!string.IsNullOrEmpty(message))
+		{
+			titleLabel.DisplayText(message);
+		}*/
 
 		if(sceneNode is GameMenu menuScene)
 		{

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://ccx1n3p0idm8p"]
+
+[ext_resource type="Script" uid="uid://cmu7bxn7qdman" path="res://Scripts/Characters/Puffin.cs" id="1_81jun"]
+[ext_resource type="Texture2D" uid="uid://bwf3hi2kmc65d" path="res://Assets/Images/PuffinAtlas.png" id="1_pprvk"]
+[ext_resource type="AudioStream" uid="uid://bulu0qmf6jh3j" path="res://Assets/Audio/Effects/Spit.wav" id="2_mrljb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbixu"]
+atlas = ExtResource("1_pprvk")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxcld"]
+atlas = ExtResource("1_pprvk")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3yal"]
+atlas = ExtResource("1_pprvk")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hm387"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbixu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxcld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3yal")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Puffin" type="Node3D" unique_id=723034941 node_paths=PackedStringArray("sprite", "spitTimer", "spitSound", "spitPoint")]
+script = ExtResource("1_81jun")
+sprite = NodePath("AnimatedSprite3D")
+spitTimer = NodePath("SpitTimer")
+spitSound = NodePath("Spit")
+spitPoint = NodePath("SpitPoint")
+
+[node name="Spit" type="AudioStreamPlayer" parent="." unique_id=1486890260]
+stream = ExtResource("2_mrljb")
+bus = &"Effects"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=861874412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39835548, 0, 0)
+sorting_offset = 10.0
+shaded = true
+no_depth_test = true
+alpha_cut = 2
+sprite_frames = SubResource("SpriteFrames_hm387")
+
+[node name="SpitTimer" type="Timer" parent="." unique_id=1572551577]
+one_shot = true
+
+[node name="SpitPoint" type="Node3D" parent="." unique_id=1157416925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39510345, 0.706005, 0)

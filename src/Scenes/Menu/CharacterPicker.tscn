@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dck2bp2tr3qfj"]
 
 [ext_resource type="Script" uid="uid://ds4mnqbn5ptb6" path="res://Scripts/Menus/CharacterPicker.cs" id="1_ig7m6"]
-[ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="2_yh0rq"]
 
 [node name="CharacterPicker" type="Control" unique_id=28615561]
 layout_mode = 3
@@ -32,22 +31,6 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 32
 alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=818979751]
-visible = false
-layout_mode = 2
-
-[node name="StartMatch" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=577546472]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yh0rq")
-theme_override_font_sizes/font_size = 64
-text = "Start match"
-
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1126205973]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_yh0rq")
-theme_override_font_sizes/font_size = 64
-text = "Back"
 
 [node name="DelayTimer" type="Timer" parent="." unique_id=1760038174]
 wait_time = 0.5

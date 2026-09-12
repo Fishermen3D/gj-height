@@ -11,6 +11,8 @@ public partial class GameInfo : Node3D
 	public int winnerPlayerIndex = 1;
 	public Player.CharacterType winnerType = Player.CharacterType.JELLYFISH;
 
+	//TitleLabel titleLabel;
+
 	public List<Player.CharacterType> characterTypes = new()
 	{
 		Player.CharacterType.CAT,
@@ -78,6 +80,12 @@ public partial class GameInfo : Node3D
 		transitionLayer.AddChild(matrixEffect);
 
 		AddChild(transitionLayer);
+
+		/*PackedScene titleLabelScene = GD.Load<PackedScene>("res://Scenes/UI/TitleLabel.tscn");
+		titleLabel = titleLabelScene.Instantiate<TitleLabel>();
+
+		sceneManager.titleLabel = titleLabel;
+		AddChild(titleLabel);*/
 
 	}
 
