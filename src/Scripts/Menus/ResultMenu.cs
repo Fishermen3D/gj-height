@@ -39,7 +39,7 @@ public partial class ResultMenu : Node3D
 
 	private void Rematch()
 	{
-		sceneManager.ChangeScene("res://Scenes/Levels/level.tscn", SceneManager.TransitionType.MATRIX, "One\nmore");
+		sceneManager.ChangeScene("res://Scenes/Levels/level.tscn", SceneManager.TransitionType.MATRIX, "One more\nround");
 	}
 
 }
