@@ -2,10 +2,12 @@
 
 [ext_resource type="Environment" uid="uid://dmm8gd344rpmm" path="res://Misc/LevelEnvironment.tres" id="1_7m7d6"]
 [ext_resource type="Texture2D" uid="uid://c328a4la2rkky" path="res://Assets/Images/Backdrop/Bg1.PNG" id="1_tykpd"]
+[ext_resource type="Script" uid="uid://c1u5nk0x1h60c" path="res://Scripts/Menus/ResultMenu.cs" id="1_y7b4c"]
 [ext_resource type="Texture2D" uid="uid://cyvd2uhopeyxe" path="res://Assets/Images/Backdrop/Bg2.PNG" id="2_gj1wd"]
 [ext_resource type="Script" uid="uid://bywebjhon0238" path="res://Scripts/Characters/ResultPlayer.cs" id="3_gj1wd"]
 [ext_resource type="SpriteFrames" uid="uid://bk2pjtb1kg7o2" path="res://Misc/CharacterFrames.tres" id="4_dw52k"]
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="5_polc7"]
+[ext_resource type="AudioStream" uid="uid://d02yni3hvk8tb" path="res://Assets/Audio/Effects/Twang.wav" id="5_xrp5v"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hm387"]
 size = Vector2(20, 20)
@@ -15,10 +17,13 @@ size = Vector2(20, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hm387"]
 size = Vector3(20, 1, 20)
 
-[node name="ResultMenu" type="Node3D" unique_id=1255525280]
+[node name="ResultMenu" type="Node3D" unique_id=1255525280 node_paths=PackedStringArray("quitButton", "rematchButton")]
+script = ExtResource("1_y7b4c")
+quitButton = NodePath("CanvasLayer/MarginContainer/HBoxContainer/QuitButton")
+rematchButton = NodePath("CanvasLayer/MarginContainer/HBoxContainer/RematchButton")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2088508294]
-transform = Transform3D(1, 0, 0, 0, 0.99953645, -0.03044273, 0, 0.03044273, 0.99953645, 0, 1.5978959, 6.487927)
+transform = Transform3D(1, 0, 0, 0, 0.99953645, -0.03044273, 0, 0.03044273, 0.99953645, 0, 2.4282734, 6.5132174)
 environment = ExtResource("1_7m7d6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1604155091]
@@ -56,6 +61,10 @@ texture = ExtResource("2_gj1wd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5323975, 2.2162118)
 script = ExtResource("3_gj1wd")
 
+[node name="Twang" type="AudioStreamPlayer" parent="ResultPlayer" unique_id=89001986]
+stream = ExtResource("5_xrp5v")
+bus = &"Effects"
+
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="ResultPlayer" unique_id=386998453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12889296, 0.1976366, 0)
 billboard = 1
@@ -67,7 +76,7 @@ animation = &"Cat"
 shape = SubResource("CapsuleShape3D_hm387")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=785924513]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0847094, 1.6061885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3805923, 1.6061885)
 billboard = 1
 alpha_cut = 2
 text = "Player x wins!"
@@ -83,3 +92,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38546205, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2043599132]
 shape = SubResource("BoxShape3D_hm387")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=800608416]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=983836985]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -149.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_bottom = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=357875266]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=688986588]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_polc7")
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+
+[node name="RematchButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1078490772]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_polc7")
+theme_override_font_sizes/font_size = 64
+text = "Rematch"

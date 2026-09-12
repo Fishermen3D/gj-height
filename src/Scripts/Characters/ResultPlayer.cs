@@ -20,6 +20,7 @@ public partial class ResultPlayer : CharacterBody3D
 
 	public override void _Ready()
 	{
+		soundToPlay = GetNode<AudioStreamPlayer>("Twang");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

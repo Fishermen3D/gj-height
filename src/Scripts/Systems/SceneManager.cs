@@ -88,6 +88,12 @@ public partial class SceneManager : Node
 			menuScene.gameInfo = gameInfo;
 		}
 
+		if(sceneNode is ResultMenu resultScene)
+		{
+			resultScene.sceneManager = this;
+			resultScene.gameInfo = gameInfo;
+		}
+
 		if(sceneNode is GameScene gameScene)
 		{
 			gameScene.sceneManager = this;

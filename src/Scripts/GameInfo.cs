@@ -34,10 +34,21 @@ public partial class GameInfo : Node3D
 		{
 			if(child is not GameInfo)
 			{
+				if(child is ResultMenu resultMenu)
+				{
+					resultMenu.sceneManager = sceneManager;
+					resultMenu.gameInfo = this;
+				}
+
 				if(child is GameMenu menu)
 				{
 					menu.sceneManager = sceneManager;
 					menu.gameInfo = this;
+				}
+
+				if(child is MainMenu mainMenu)
+				{
+					mainMenu.RegrabFocus();
 				}
 
 				if(child is GameScene scene)

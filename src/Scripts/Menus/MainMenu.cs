@@ -13,7 +13,6 @@ public partial class MainMenu : GameMenu
 
 		startGameButton.Pressed += StartGame;
 		startGameButton.GrabFocus();
-		startGameButton.GrabClickFocus();
 
 		quitGameButton.Pressed += QuitGame;
 	}
@@ -26,5 +25,10 @@ public partial class MainMenu : GameMenu
 	private void StartGame()
 	{
 		sceneManager.ChangeScene("res://Scenes/Menu/PlayerCountPicker.tscn", SceneManager.TransitionType.MATRIX, "How\nmany?");
+	}
+
+	public void RegrabFocus()
+	{
+		startGameButton.GrabFocus();
 	}
 }
