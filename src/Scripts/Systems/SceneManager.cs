@@ -6,6 +6,7 @@ public partial class SceneManager : Node
 
 	Node currentScene;
 	public MatrixTransition matrixTransitionRect;
+	public GameInfo gameInfo;
 
 	public enum TransitionType
 	{
@@ -26,7 +27,7 @@ public partial class SceneManager : Node
 		return true;
 	}
 
-	public void ChangeScene(string scenePath, TransitionType transitionType)
+	public void ChangeScene(string scenePath, TransitionType transitionType, string message = null)
 	{
 		switch (transitionType)
 		{
@@ -43,8 +44,10 @@ public partial class SceneManager : Node
 
 				matrixTransitionRect.Reset(texture);
 				matrixTransitionRect.Show();
-				LoadScene(scenePath);
+
+				LoadScene(scenePath, message);
 				SetProcess(true);
+				
 				break;
 		}
 	}
@@ -53,11 +56,13 @@ public partial class SceneManager : Node
 	{
 		foreach(Node child in GetChildren())
 		{
+			if(child is SceneTitle){ continue; }
+
 			child.ProcessMode = ProcessModeEnum.Disabled;
 		}
 	}
 
-	void LoadScene(string scenePath)
+	void LoadScene(string scenePath, string message = null)
 	{
 		foreach(Node child in GetChildren())
 		{
@@ -65,17 +70,28 @@ public partial class SceneManager : Node
 			child.QueueFree();
 		}
 
-		PackedScene scene = GD.Load<PackedScene>(scenePath);
+		var newScene = message == null ? scenePath : "res://Scenes/Menu/SceneTitle.tscn";
+
+		PackedScene scene = GD.Load<PackedScene>(newScene);
 		Node sceneNode = scene.Instantiate();
+
+		if(sceneNode is SceneTitle sceneTitle)
+		{
+			sceneTitle.title = message;
+			sceneTitle.sceneToLoad = scenePath;
+			sceneTitle.sceneManager = this;
+		}
 
 		if(sceneNode is GameMenu menuScene)
 		{
 			menuScene.sceneManager = this;
+			menuScene.gameInfo = gameInfo;
 		}
 
 		if(sceneNode is GameScene gameScene)
 		{
 			gameScene.sceneManager = this;
+			gameScene.gameInfo = gameInfo;
 
 			PackedScene pauseScene = GD.Load<PackedScene>("res://Scenes/Menu/PauseMenu.tscn");
 			PauseMenu menu = pauseScene.Instantiate<PauseMenu>();

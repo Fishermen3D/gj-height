@@ -25,6 +25,6 @@ public partial class MainMenu : GameMenu
 
 	private void StartGame()
 	{
-		sceneManager.ChangeScene("res://Scenes/Levels/level.tscn", SceneManager.TransitionType.MATRIX);
+		sceneManager.ChangeScene("res://Scenes/Menu/PlayerCountPicker.tscn", SceneManager.TransitionType.MATRIX, "How\nmany?");
 	}
 }

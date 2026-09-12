@@ -5,6 +5,8 @@ public partial class GameInfo : Node3D
 
 	public static SceneManager sceneManager;
 
+	public int amountOfPlayers = 2;
+
 	public override void _Ready()
 	{
 		SetProcess(false);
@@ -14,6 +16,8 @@ public partial class GameInfo : Node3D
 			Name = "SceneManager"
 		};
 		
+		sceneManager.gameInfo = this;
+
 		AddChild(sceneManager);
 
 		foreach(Node child in GetTree().Root.GetChildren())

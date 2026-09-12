@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlcvwhcckxiyn"]
 
 [ext_resource type="Script" uid="uid://c0qrt1yr8k7yd" path="res://Scripts/Menus/MainMenu.cs" id="1_mj0i0"]
+[ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="2_mj0i0"]
 
 [node name="MainMenu" type="Control" unique_id=1359789061 node_paths=PackedStringArray("startGameButton", "quitGameButton")]
 layout_mode = 3
@@ -44,9 +45,13 @@ theme_override_constants/separation = 12
 [node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1183748906]
 layout_mode = 2
 offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("2_mj0i0")
+theme_override_font_sizes/font_size = 64
 text = "Start Game"
 
 [node name="QuitGameButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=98761002]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mj0i0")
+theme_override_font_sizes/font_size = 64
 text = "Quit game
 "

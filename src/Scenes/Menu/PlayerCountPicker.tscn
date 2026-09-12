@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://tgsadi8hk0li"]
+
+[ext_resource type="Script" uid="uid://bxehui0s0ca1o" path="res://Scripts/Menus/PlayerCountPicker.cs" id="1_mg2hf"]
+[ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="2_bxqew"]
+
+[node name="PlayerCountPicker" type="Control" unique_id=1779344133 node_paths=PackedStringArray("twoPlayerButton", "threePlayerButton", "fourPlayerButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mg2hf")
+twoPlayerButton = NodePath("MarginContainer/VBoxContainer/TwoPLayers")
+threePlayerButton = NodePath("MarginContainer/VBoxContainer/ThreePlayers")
+fourPlayerButton = NodePath("MarginContainer/VBoxContainer/FourPlayers")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=521626127]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2015131755]
+layout_mode = 2
+alignment = 1
+
+[node name="TwoPLayers" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1435989827]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bxqew")
+theme_override_font_sizes/font_size = 64
+text = "2 Players"
+
+[node name="ThreePlayers" type="Button" parent="MarginContainer/VBoxContainer" unique_id=40592866]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bxqew")
+theme_override_font_sizes/font_size = 64
+text = "3 Players"
+
+[node name="FourPlayers" type="Button" parent="MarginContainer/VBoxContainer" unique_id=312796084]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bxqew")
+theme_override_font_sizes/font_size = 64
+text = "4 Players"

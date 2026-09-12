@@ -5,6 +5,7 @@ public partial class GameMenu : Control
 {
 	
 	public SceneManager sceneManager;
+	public GameInfo gameInfo;
 
 	public override void _Ready()
 	{
