@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bx02ky5a0byeg"]
+
+[ext_resource type="SpriteFrames" uid="uid://cgqtkvjkvi564" path="res://Misc/GroundHitFrames.tres" id="1_usj5v"]
+[ext_resource type="Script" uid="uid://b5606yaecgepq" path="res://Scripts/Misc/SpriteEffect.cs" id="2_sqush"]
+
+[node name="GroundHitEffect" type="AnimatedSprite3D" unique_id=380291972]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+billboard = 1
+shaded = true
+alpha_cut = 2
+sprite_frames = ExtResource("1_usj5v")
+autoplay = "default"
+script = ExtResource("2_sqush")

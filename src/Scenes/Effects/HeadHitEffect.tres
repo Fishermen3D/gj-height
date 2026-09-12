@@ -1,0 +1,74 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c1t2ibkj5laji"]
+
+[ext_resource type="Texture2D" uid="uid://ijux3o3mk5jp" path="res://Assets/Images/HeadHit.png" id="1_l41a7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kuss"]
+atlas = ExtResource("1_l41a7")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7ida"]
+atlas = ExtResource("1_l41a7")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv7v8"]
+atlas = ExtResource("1_l41a7")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngkhn"]
+atlas = ExtResource("1_l41a7")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioagg"]
+atlas = ExtResource("1_l41a7")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5t7d"]
+atlas = ExtResource("1_l41a7")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mee42"]
+atlas = ExtResource("1_l41a7")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qa2k"]
+atlas = ExtResource("1_l41a7")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eap6m"]
+atlas = ExtResource("1_l41a7")
+region = Rect2(256, 256, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kuss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7ida")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv7v8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngkhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioagg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5t7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mee42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qa2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eap6m")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 24.0
+}]

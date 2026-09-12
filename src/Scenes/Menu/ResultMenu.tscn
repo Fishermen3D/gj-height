@@ -8,6 +8,7 @@
 [ext_resource type="SpriteFrames" uid="uid://bk2pjtb1kg7o2" path="res://Misc/CharacterFrames.tres" id="4_dw52k"]
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="5_polc7"]
 [ext_resource type="AudioStream" uid="uid://d02yni3hvk8tb" path="res://Assets/Audio/Effects/Twang.wav" id="5_xrp5v"]
+[ext_resource type="SpriteFrames" uid="uid://cgqtkvjkvi564" path="res://Misc/GroundHitFrames.tres" id="9_j0woq"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hm387"]
 size = Vector2(20, 20)
@@ -124,3 +125,11 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("5_polc7")
 theme_override_font_sizes/font_size = 64
 text = "Rematch"
+
+[node name="SmokeEffect" type="AnimatedSprite3D" parent="." unique_id=583662563]
+transform = Transform3D(2.6746876, 0, 0, 0, 2.6746876, 0, 0, 0, 2.6746876, 0, 1.860122, 3.0873818)
+billboard = 1
+shaded = true
+sprite_frames = ExtResource("9_j0woq")
+frame = 8
+frame_progress = 1.0

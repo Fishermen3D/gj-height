@@ -1,0 +1,74 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cgqtkvjkvi564"]
+
+[ext_resource type="Texture2D" uid="uid://dubewxfarj1jq" path="res://Assets/Images/GroundHit.png" id="1_jjlp6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn6wr"]
+atlas = ExtResource("1_jjlp6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7ibv"]
+atlas = ExtResource("1_jjlp6")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgacq"]
+atlas = ExtResource("1_jjlp6")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mj4b"]
+atlas = ExtResource("1_jjlp6")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3uii"]
+atlas = ExtResource("1_jjlp6")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a16vt"]
+atlas = ExtResource("1_jjlp6")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd0mj"]
+atlas = ExtResource("1_jjlp6")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqm8k"]
+atlas = ExtResource("1_jjlp6")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6df5q"]
+atlas = ExtResource("1_jjlp6")
+region = Rect2(256, 256, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn6wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7ibv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgacq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mj4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3uii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a16vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd0mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqm8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6df5q")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 24.0
+}]

@@ -12,6 +12,10 @@ public partial class ResultMenu : Node3D
 	public SceneManager sceneManager;
 	public GameInfo gameInfo;
 
+	Label3D winnerLabel;
+
+	ResultPlayer player;
+
 	public override void _Ready()
 	{
 		base._Ready();
@@ -20,6 +24,12 @@ public partial class ResultMenu : Node3D
 		quitButton.Pressed += ToMenu;
 
 		rematchButton.GrabFocus();
+
+		winnerLabel = GetNode<Label3D>("Label3D");
+		winnerLabel.Text = $"Player {gameInfo.winnerPlayerIndex} Wins!";
+
+		player = GetNode<ResultPlayer>("ResultPlayer");
+		player.SetPlayer(gameInfo.winnerType);
 	}
 
 	private void ToMenu()

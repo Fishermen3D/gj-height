@@ -8,6 +8,8 @@ public partial class Level : GameScene
 
 	Timer winTimer;
 
+	AudioStreamPlayer boomSound;
+
 	public override void _Ready()
 	{
 		PackedScene PlayerScene = GD.Load<PackedScene>("res://Scenes/Characters/Player.tscn");
@@ -20,6 +22,7 @@ public partial class Level : GameScene
 			player.currentLevel = this;
 
 			player.Position = startSpawnPoint;
+			player.playerIndex = i+1;
 			startSpawnPoint.X += 2.0f;
 
 			AddChild(player);
@@ -36,6 +39,8 @@ public partial class Level : GameScene
 
 		winTimer = GetNode<Timer>("WinnerTimer");
 		winTimer.Timeout += GoToWinScreen;
+
+		boomSound = GetNode<AudioStreamPlayer>("Boom");
 	}
 
 	private void GoToWinScreen()
@@ -67,6 +72,23 @@ public partial class Level : GameScene
 				}
 			}
 
+			Player winner;
+			foreach(Node child in GetChildren())
+			{
+				if(child is Player player)
+				{
+					if(player.currentState != Player.PlayerState.DEAD)
+					{
+						winner = player;
+						gameInfo.winnerPlayerIndex = winner.playerIndex;
+						gameInfo.winnerType = winner.characterType;
+						
+						break;
+					}
+				}
+			}
+
+			boomSound.Play();
 			winTimer.Start();
 		}
 	}

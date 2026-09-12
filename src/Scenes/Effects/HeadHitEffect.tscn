@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cq6lgkujbc3r6"]
+
+[ext_resource type="SpriteFrames" uid="uid://c1t2ibkj5laji" path="res://Scenes/Effects/HeadHitEffect.tres" id="1_f7kmq"]
+[ext_resource type="Script" uid="uid://b5606yaecgepq" path="res://Scripts/Misc/SpriteEffect.cs" id="1_lo6c5"]
+
+[node name="HeadHitEffect" type="AnimatedSprite3D" unique_id=929644373]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+sprite_frames = ExtResource("1_f7kmq")
+autoplay = "default"
+script = ExtResource("1_lo6c5")

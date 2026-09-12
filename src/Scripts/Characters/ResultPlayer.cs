@@ -4,7 +4,7 @@ using System;
 public partial class ResultPlayer : CharacterBody3D
 {
 	
-	Sprite3D sprite;
+	AnimatedSprite3D sprite;
 
 	double baseJumpForce = 10.0;
 	double jumpAddition = 2.0;
@@ -16,11 +16,26 @@ public partial class ResultPlayer : CharacterBody3D
 
 	AudioStreamPlayer soundToPlay;
 
+	AnimatedSprite3D smokeEffect;
+
 	Random random = new Random();
 
 	public override void _Ready()
 	{
 		soundToPlay = GetNode<AudioStreamPlayer>("Twang");
+
+		smokeEffect = GetParent().GetNode<AnimatedSprite3D>("SmokeEffect");
+		smokeEffect.Hide();
+
+		smokeEffect.AnimationFinished += HideSmoke;
+
+		sprite = GetNode<AnimatedSprite3D>("AnimatedSprite3D");
+	}
+
+	private void HideSmoke()
+	{
+		smokeEffect.Hide();
+		smokeEffect.Stop();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,6 +54,9 @@ public partial class ResultPlayer : CharacterBody3D
 
 			fallVelocity = baseJumpForce;
 
+			smokeEffect.Play();
+			smokeEffect.Show();
+
 			/*if (Input.IsActionJustPressed(jumpInput))
 			{
 				fallVelocity = jumpForce;
@@ -55,6 +73,7 @@ public partial class ResultPlayer : CharacterBody3D
 
 	public void SetPlayer(Player.CharacterType type)
 	{
-		
+		sprite.Play(Player.spriteFrameGroup[type]);
+		sprite.Stop();
 	}
 }

@@ -63,6 +63,13 @@ public partial class Player : CharacterBody3D
 
 	public Level currentLevel;
 
+	PackedScene groundHitScene;
+	PackedScene headHitEffect;
+
+	public int playerIndex = 0;
+
+	Node3D modelPivot;
+
 	public static Dictionary<CharacterType, StringName> spriteFrameGroup = new()
 	{
 		{ CharacterType.NONE, new StringName() },
@@ -102,6 +109,11 @@ public partial class Player : CharacterBody3D
 		sprite.Stop();
 
 		soundToPlay = boingSoundPlayer1;
+
+		groundHitScene = GD.Load<PackedScene>("res://Scenes/Effects/GroundHitEffect.tscn");
+		headHitEffect = GD.Load<PackedScene>("res://Scenes/Effects/HeadHitEffect.tscn");
+
+		modelPivot = GetNode<Node3D>("ModelPivot");
 	}
 
 	public override void _Process(double delta)
@@ -143,13 +155,9 @@ public partial class Player : CharacterBody3D
 			soundToPlay.PitchScale = (float)random.NextDouble() + 0.5f;
 			soundToPlay.Play();
 
-			/*if (Input.IsActionJustPressed(jumpInput))
-			{
-				fallVelocity = jumpForce;
-				return;
-			}*/
-
-			//fallVelocity = 0.0;
+			Node3D groundHitNode = groundHitScene.Instantiate<Node3D>();
+			groundHitNode.Position = GlobalPosition;
+			currentLevel.AddChild(groundHitNode);
 		}
 		else
 		{
@@ -168,12 +176,18 @@ public partial class Player : CharacterBody3D
 
 			if (hitRay.IsColliding())
 			{
-				Node objectOfInterest = (Node)floorChecker.GetCollider();
+				Node3D objectOfInterest = (Node3D)floorChecker.GetCollider();
 				if(objectOfInterest is Player opponent)
 				{
 					opponent.GetHit();
 
 					fallVelocity = baseJumpForce * 1.05;
+
+					Node3D headHit = headHitEffect.Instantiate<Node3D>();
+					headHit.Position = objectOfInterest.GlobalPosition;
+
+					currentLevel.AddChild(headHit);
+					hitSound.Play();
 				}
 			}
 		}

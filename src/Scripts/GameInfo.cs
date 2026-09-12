@@ -8,8 +8,8 @@ public partial class GameInfo : Node3D
 
 	public int amountOfPlayers = 2;
 
-	public int winnerPlayerIndex;
-	public Player.CharacterType winnerType;
+	public int winnerPlayerIndex = 1;
+	public Player.CharacterType winnerType = Player.CharacterType.JELLYFISH;
 
 	public List<Player.CharacterType> characterTypes = new()
 	{
