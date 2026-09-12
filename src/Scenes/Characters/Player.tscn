@@ -12,6 +12,7 @@
 size = Vector3(1, 0.31079102, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=590308953]
+axis_lock_linear_z = true
 script = ExtResource("1_gjot8")
 
 [node name="Hit" type="AudioStreamPlayer" parent="." unique_id=1965431684]
