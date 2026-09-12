@@ -10,6 +10,9 @@ size = Vector3(40, 1, 10)
 [sub_resource type="PlaneMesh" id="PlaneMesh_hm387"]
 size = Vector2(40, 10)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ai5x"]
+size = Vector3(1, 40, 20)
+
 [node name="Level" type="Node3D" unique_id=2069482505]
 script = ExtResource("1_f1n8c")
 
@@ -97,3 +100,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.250919, 3.7725616, -14.360
 shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1284250151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.496078, 19.44429, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=174582432]
+shape = SubResource("BoxShape3D_5ai5x")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=829490069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.510883, 19.44429, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1742722996]
+shape = SubResource("BoxShape3D_5ai5x")

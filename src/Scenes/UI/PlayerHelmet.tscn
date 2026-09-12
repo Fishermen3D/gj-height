@@ -24,6 +24,8 @@ text = "Player x"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1090871237]
-custom_maximum_size = Vector2(133, 128)
+custom_maximum_size = Vector2(110.2, 128)
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("1_3w4jr")
+stretch_mode = 5

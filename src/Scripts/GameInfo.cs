@@ -8,7 +8,11 @@ public partial class GameInfo : Node3D
 
 	public int amountOfPlayers = 2;
 
-	public List<Player.CharacterType> characterTypes = [];
+	public List<Player.CharacterType> characterTypes = new()
+	{
+		Player.CharacterType.CAT,
+		Player.CharacterType.BEAR
+	};
 
 	public override void _Ready()
 	{
@@ -30,11 +34,13 @@ public partial class GameInfo : Node3D
 				if(child is GameMenu menu)
 				{
 					menu.sceneManager = sceneManager;
+					menu.gameInfo = this;
 				}
 
 				if(child is GameScene scene)
 				{
 					scene.sceneManager = sceneManager;
+					scene.gameInfo = this;
 
 					PackedScene pauseScene = GD.Load<PackedScene>("res://Scenes/Menu/PauseMenu.tscn");
 					PauseMenu pauseMenu = pauseScene.Instantiate<PauseMenu>();
