@@ -112,3 +112,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.510883, 19.44429, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1742722996]
 shape = SubResource("BoxShape3D_5ai5x")
+
+[node name="WinnerTimer" type="Timer" parent="." unique_id=147875951]
+process_mode = 3
+wait_time = 5.0
+one_shot = true

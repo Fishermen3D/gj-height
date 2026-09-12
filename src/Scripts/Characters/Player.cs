@@ -61,6 +61,8 @@ public partial class Player : CharacterBody3D
 	AnimatedSprite3D sprite;
 	StringName characterFrames;
 
+	public Level currentLevel;
+
 	Dictionary<CharacterType, StringName> spriteFrameGroup = new()
 	{
 		{ CharacterType.NONE, new StringName() },
@@ -230,6 +232,7 @@ public partial class Player : CharacterBody3D
 		{
 			//myShape.Disabled = true;
 			hitShape.Disabled = true;
+			currentLevel.CheckPlayerCount();
 		}
 	}
 }

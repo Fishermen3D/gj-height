@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bygwqairha8gn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hm387"]
+size = Vector2(20, 20)
+
+[node name="ResultMenu" type="Node3D" unique_id=1255525280]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2088508294]
+transform = Transform3D(1, 0, 0, 0, 0.9543496, 0.29869193, 0, -0.29869193, 0.9543496, 0, 0.866758, 2.0646849)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1604155091]
+mesh = SubResource("PlaneMesh_hm387")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=421623790]
+transform = Transform3D(0.79538894, -0.3238805, 0.5123065, 0, 0.8452516, 0.5343685, -0.60609937, -0.42503077, 0.6723037, 4.5444646, 4.5568333, 0)
+shadow_enabled = true
