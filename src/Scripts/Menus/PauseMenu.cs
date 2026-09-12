@@ -32,7 +32,6 @@ public partial class PauseMenu : CanvasLayer
 		sceneManager.ChangeScene("res://Scenes/Menu/MainMenu.tscn", SceneManager.TransitionType.MATRIX);
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		if (Input.IsActionJustPressed(pauseInput))
@@ -41,11 +40,15 @@ public partial class PauseMenu : CanvasLayer
 			{
 				Show();
 				gameplayNode.ProcessMode = ProcessModeEnum.Disabled;
+				resumeGameButton.GrabFocus();
 			}
 			else
 			{
 				Hide();
 				gameplayNode.ProcessMode = ProcessModeEnum.Inherit;
+
+				resumeGameButton.ReleaseFocus();
+				quitGameButton.ReleaseFocus();
 			}
 		}
 	}
