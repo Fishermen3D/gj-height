@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ci7n2thleat5h"]
+
+[ext_resource type="Texture2D" uid="uid://d4kxljsqgraue" path="res://icon.svg" id="1_lg7d2"]
+[ext_resource type="Shader" uid="uid://dfpk8mux78xf7" path="res://Assets/Shaders/MatrixTransitionShader.gdshader" id="1_yn4je"]
+[ext_resource type="Script" uid="uid://cntefwfvcq8hs" path="res://Scripts/Misc/Transitions/MatrixTransition.cs" id="3_muwpx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lg7d2"]
+shader = ExtResource("1_yn4je")
+shader_parameter/spacing = 25.0
+shader_parameter/animation_progress = 1.0
+shader_parameter/dot_size = 1.0
+shader_parameter/dot_color = Color(0, 0, 0, 1)
+
+[node name="MatrixTransitionEffect" type="TextureRect" unique_id=440258085]
+top_level = true
+z_index = 100
+material = SubResource("ShaderMaterial_lg7d2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lg7d2")
+script = ExtResource("3_muwpx")

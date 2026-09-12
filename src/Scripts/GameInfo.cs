@@ -40,6 +40,18 @@ public partial class GameInfo : Node3D
 				child.CallDeferred("reparent", sceneManager);
 			}
 		}
+
+		CanvasLayer transitionLayer = new CanvasLayer();
+		transitionLayer.Layer = 100;
+
+		PackedScene matricTransitionScene = GD.Load<PackedScene>("res://Scenes/UI/TransitionEffect.tscn");
+		MatrixTransition matrixEffect = matricTransitionScene.Instantiate<MatrixTransition>();
+		sceneManager.matrixTransitionRect = matrixEffect;
+
+		transitionLayer.AddChild(matrixEffect);
+
+		AddChild(transitionLayer);
+
 	}
 
 	public static SceneManager GetSceneManager()

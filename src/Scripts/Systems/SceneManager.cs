@@ -5,12 +5,16 @@ public partial class SceneManager : Node
 {
 
 	Node currentScene;
+	public MatrixTransition matrixTransitionRect;
 
 	public enum TransitionType
 	{
 		INSTANT,
-		FADE
+		FADE,
+		MATRIX
 	}
+
+	public TransitionType currentTransition = TransitionType.INSTANT;
 
 	public override void _Ready()
 	{
@@ -29,6 +33,27 @@ public partial class SceneManager : Node
 			case TransitionType.INSTANT:
 				LoadScene(scenePath);
 				break;
+			
+			case TransitionType.MATRIX:
+				currentTransition = transitionType;
+				FreezeCurrentScene();
+
+				Image image = GetViewport().GetTexture().GetImage();
+				Texture2D texture = ImageTexture.CreateFromImage(image);
+
+				matrixTransitionRect.Reset(texture);
+				matrixTransitionRect.Show();
+				LoadScene(scenePath);
+				SetProcess(true);
+				break;
+		}
+	}
+
+	void FreezeCurrentScene()
+	{
+		foreach(Node child in GetChildren())
+		{
+			child.ProcessMode = ProcessModeEnum.Disabled;
 		}
 	}
 
@@ -61,5 +86,19 @@ public partial class SceneManager : Node
 		}
 
 		AddChild(sceneNode);
+	}
+
+	public override void _Process(double delta)
+	{
+		switch (currentTransition)
+		{
+			case TransitionType.MATRIX:
+				if (matrixTransitionRect.UpdateEffect(delta))
+				{
+					matrixTransitionRect.Hide();
+					SetProcess(false);
+				}
+				break;
+		}
 	}
 }

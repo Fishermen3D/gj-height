@@ -26,9 +26,11 @@ public partial class Player : CharacterBody3D
 	Label3D label;
 
 	RayCast3D floorChecker;
+	RayCast3D hitRay;
 	AudioStreamPlayer boingSoundPlayer1;
 	AudioStreamPlayer boingSoundPlayer2;
 	AudioStreamPlayer soundToPlay;
+	AudioStreamPlayer hitSound;
 
 	bool jumpInputOk = false;
 	
@@ -55,8 +57,10 @@ public partial class Player : CharacterBody3D
 		label.Text = inputPrefix.ToUpper();
 
 		floorChecker = GetNode<RayCast3D>("RayCast3D");
+		hitRay = GetNode<RayCast3D>("HitRay");
 		boingSoundPlayer1 = GetNode<AudioStreamPlayer>("BoingPlayerOne");
 		boingSoundPlayer2 = GetNode<AudioStreamPlayer>("BoingPlayerTwo");
+		hitSound = GetNode<AudioStreamPlayer>("Hit");
 
 		if(inputPrefix == "p1")
 		{
@@ -125,6 +129,34 @@ public partial class Player : CharacterBody3D
 					}
 				}
 			}
+
+			if (hitRay.IsColliding())
+			{
+				Node objectOfInterest = (Node)floorChecker.GetCollider();
+				if(objectOfInterest is Player opponent)
+				{
+					opponent.GetHit();
+
+					fallVelocity = baseJumpForce * 1.2;
+				}
+			}
 		}
+	}
+
+	void ResetJumpForce()
+	{
+		baseJumpForce = jumpForceReset;
+		fallVelocity = baseJumpForce;
+	}
+
+	public void PushDown(float amount = -30.0f)
+	{
+		hitSound.Play();
+		fallVelocity = amount;
+	}
+
+	public void GetHit()
+	{
+		PushDown();
 	}
 }

@@ -15,6 +15,6 @@ public partial class MainMenu : GameMenu
 
 	private void StartGame()
 	{
-		sceneManager.ChangeScene("res://Scenes/Levels/level.tscn", SceneManager.TransitionType.INSTANT);
+		sceneManager.ChangeScene("res://Scenes/Levels/level.tscn", SceneManager.TransitionType.MATRIX);
 	}
 }

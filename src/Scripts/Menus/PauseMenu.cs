@@ -29,7 +29,7 @@ public partial class PauseMenu : CanvasLayer
 
 	private void ReturnToMenu()
 	{
-		sceneManager.ChangeScene("res://Scenes/Menu/MainMenu.tscn", SceneManager.TransitionType.INSTANT);
+		sceneManager.ChangeScene("res://Scenes/Menu/MainMenu.tscn", SceneManager.TransitionType.MATRIX);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
