@@ -1,12 +1,25 @@
 [gd_scene format=3 uid="uid://bygwqairha8gn"]
 
+[ext_resource type="Environment" uid="uid://dmm8gd344rpmm" path="res://Misc/LevelEnvironment.tres" id="1_7m7d6"]
+[ext_resource type="Texture2D" uid="uid://c328a4la2rkky" path="res://Assets/Images/Backdrop/Bg1.PNG" id="1_tykpd"]
+[ext_resource type="Texture2D" uid="uid://cyvd2uhopeyxe" path="res://Assets/Images/Backdrop/Bg2.PNG" id="2_gj1wd"]
+[ext_resource type="Script" uid="uid://bywebjhon0238" path="res://Scripts/Characters/ResultPlayer.cs" id="3_gj1wd"]
+[ext_resource type="SpriteFrames" uid="uid://bk2pjtb1kg7o2" path="res://Misc/CharacterFrames.tres" id="4_dw52k"]
+[ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="5_polc7"]
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_hm387"]
 size = Vector2(20, 20)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hm387"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hm387"]
+size = Vector3(20, 1, 20)
 
 [node name="ResultMenu" type="Node3D" unique_id=1255525280]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2088508294]
-transform = Transform3D(1, 0, 0, 0, 0.9543496, 0.29869193, 0, -0.29869193, 0.9543496, 0, 0.866758, 2.0646849)
+transform = Transform3D(1, 0, 0, 0, 0.99953645, -0.03044273, 0, 0.03044273, 0.99953645, 0, 1.5978959, 6.487927)
+environment = ExtResource("1_7m7d6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1604155091]
 mesh = SubResource("PlaneMesh_hm387")
@@ -14,3 +27,59 @@ mesh = SubResource("PlaneMesh_hm387")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=421623790]
 transform = Transform3D(0.79538894, -0.3238805, 0.5123065, 0, 0.8452516, 0.5343685, -0.60609937, -0.42503077, 0.6723037, 4.5444646, 4.5568333, 0)
 shadow_enabled = true
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=999781486]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 3.9907725, 3.3049092, -0.7089546)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("1_tykpd")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1048732506]
+transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, -4.1245522, 3.3049092, 0.24298859)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("1_tykpd")
+
+[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=373162187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2700076, 4.9728703, -6.86633)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("2_gj1wd")
+
+[node name="Sprite3D4" type="Sprite3D" parent="." unique_id=1439226788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.979172, 4.9728703, -10.216472)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("2_gj1wd")
+
+[node name="ResultPlayer" type="CharacterBody3D" parent="." unique_id=1924934113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5323975, 2.2162118)
+script = ExtResource("3_gj1wd")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="ResultPlayer" unique_id=386998453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12889296, 0.1976366, 0)
+billboard = 1
+alpha_cut = 2
+sprite_frames = ExtResource("4_dw52k")
+animation = &"Cat"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResultPlayer" unique_id=1608512473]
+shape = SubResource("CapsuleShape3D_hm387")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=785924513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0847094, 1.6061885)
+billboard = 1
+alpha_cut = 2
+text = "Player x wins!"
+font = ExtResource("5_polc7")
+font_size = 256
+outline_size = 22
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=195477121]
+environment = ExtResource("1_7m7d6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1625592394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38546205, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2043599132]
+shape = SubResource("BoxShape3D_hm387")

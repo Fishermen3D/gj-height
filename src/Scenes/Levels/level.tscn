@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2na8uo06ws0n"]
 
 [ext_resource type="Script" uid="uid://b6qf4gjv7qo6q" path="res://Scripts/Misc/Level.cs" id="1_f1n8c"]
+[ext_resource type="Environment" uid="uid://dmm8gd344rpmm" path="res://Misc/LevelEnvironment.tres" id="2_7x7pb"]
 [ext_resource type="Texture2D" uid="uid://c328a4la2rkky" path="res://Assets/Images/Backdrop/Bg1.PNG" id="6_rv5g2"]
 [ext_resource type="Texture2D" uid="uid://cyvd2uhopeyxe" path="res://Assets/Images/Backdrop/Bg2.PNG" id="7_lhx7y"]
 
@@ -115,5 +116,8 @@ shape = SubResource("BoxShape3D_5ai5x")
 
 [node name="WinnerTimer" type="Timer" parent="." unique_id=147875951]
 process_mode = 3
-wait_time = 5.0
+wait_time = 2.5
 one_shot = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1946979526]
+environment = ExtResource("2_7x7pb")

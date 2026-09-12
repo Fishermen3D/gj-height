@@ -63,7 +63,7 @@ public partial class Player : CharacterBody3D
 
 	public Level currentLevel;
 
-	Dictionary<CharacterType, StringName> spriteFrameGroup = new()
+	public static Dictionary<CharacterType, StringName> spriteFrameGroup = new()
 	{
 		{ CharacterType.NONE, new StringName() },
 		{ CharacterType.CAT, new StringName("Cat") },
@@ -159,7 +159,6 @@ public partial class Player : CharacterBody3D
 			{
 				if (floorChecker.IsColliding())
 				{
-					//Node objectOfInterest = (Node)floorChecker.GetCollider();
 					if (Input.IsActionJustPressed(jumpInput))
 					{
 						jumpInputOk = true;
@@ -174,7 +173,7 @@ public partial class Player : CharacterBody3D
 				{
 					opponent.GetHit();
 
-					fallVelocity = baseJumpForce * 1.2;
+					fallVelocity = baseJumpForce * 1.05;
 				}
 			}
 		}
