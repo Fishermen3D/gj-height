@@ -28,40 +28,72 @@ shadow_enabled = true
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1570483143]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 3.3049092, -4.2906456)
+shaded = true
 alpha_cut = 2
 texture = ExtResource("6_rv5g2")
 
 [node name="Sprite3D7" type="Sprite3D" parent="." unique_id=116177830]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.957693, 3.3049092, 5.021759)
+shaded = true
 alpha_cut = 2
 texture = ExtResource("6_rv5g2")
 
 [node name="Sprite3D8" type="Sprite3D" parent="." unique_id=1757934609]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.125011, 3.3049092, 5.021759)
+shaded = true
 alpha_cut = 2
 texture = ExtResource("6_rv5g2")
 
 [node name="Sprite3D2" type="Sprite3D" parent="." unique_id=435941042]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6, 3.3049092, -4.2906456)
+shaded = true
 alpha_cut = 2
 texture = ExtResource("6_rv5g2")
 
 [node name="Sprite3D3" type="Sprite3D" parent="." unique_id=1433739186]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.621748, 4.9728703, -6.86633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.419468, 4.9728703, -6.86633)
+shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D4" type="Sprite3D" parent="." unique_id=870571878]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.251963, 4.9728703, -6.86633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.293179, 4.9728703, -6.86633)
+shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D5" type="Sprite3D" parent="." unique_id=1464387839]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7273245, 3.7725616, -14.360028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.313891, 3.7725616, -14.360028)
+shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D6" type="Sprite3D" parent="." unique_id=572622826]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.146385, 3.7725616, -14.360028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.1876, 3.7725616, -14.360028)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("7_lhx7y")
+
+[node name="Sprite3D9" type="Sprite3D" parent="." unique_id=2141131176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.01905, 4.9728703, -6.86633)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("7_lhx7y")
+
+[node name="Sprite3D10" type="Sprite3D" parent="." unique_id=1873180742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.14534, 4.9728703, -6.86633)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("7_lhx7y")
+
+[node name="Sprite3D11" type="Sprite3D" parent="." unique_id=1632972540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.124626, 3.7725616, -14.360028)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("7_lhx7y")
+
+[node name="Sprite3D12" type="Sprite3D" parent="." unique_id=1611814526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.250919, 3.7725616, -14.360028)
+shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
