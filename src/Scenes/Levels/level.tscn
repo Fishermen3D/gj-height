@@ -57,11 +57,11 @@ alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D5" type="Sprite3D" parent="." unique_id=1464387839]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7273245, 4.9728703, -14.360028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7273245, 3.7725616, -14.360028)
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D6" type="Sprite3D" parent="." unique_id=572622826]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.146385, 4.9728703, -14.360028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.146385, 3.7725616, -14.360028)
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
