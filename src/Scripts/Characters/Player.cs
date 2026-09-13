@@ -82,6 +82,8 @@ public partial class Player : CharacterBody3D
 
 	AnimatedSprite3D mark;
 
+	AudioStreamPlayer downSound;
+
 	public static Dictionary<CharacterType, StringName> spriteFrameGroup = new()
 	{
 		{ CharacterType.NONE, new StringName() },
@@ -129,6 +131,8 @@ public partial class Player : CharacterBody3D
 
 		mark = GetNode<AnimatedSprite3D>("Xmark");
 		mark.Hide();
+
+		downSound = GetNode<AudioStreamPlayer>("Down");
 	}
 
 	public override void _Process(double delta)
@@ -317,6 +321,7 @@ public partial class Player : CharacterBody3D
 			hitShape.Disabled = true;
 			currentLevel.CheckPlayerCount();
 			mark.Show();
+			downSound.Play();
 		}
 	}
 

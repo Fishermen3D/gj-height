@@ -29,6 +29,8 @@ public partial class Level : GameScene
 	double countTimer = 1.0;
 	int currentCount = 3;
 
+	public AudioStreamPlayer glassSound;
+
 	public override void _Ready()
 	{
 		PackedScene PlayerScene = GD.Load<PackedScene>("res://Scenes/Characters/Player.tscn");
@@ -69,6 +71,8 @@ public partial class Level : GameScene
 		gameInfo.musicManager.StopSong();
 
 		hihatSound = GetNode<AudioStreamPlayer>("Hihat");
+
+		glassSound = GetNode<AudioStreamPlayer>("Glass");
 	}
 
 	private void GoToWinScreen()

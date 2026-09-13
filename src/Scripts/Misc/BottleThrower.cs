@@ -20,7 +20,7 @@ public partial class BottleThrower : Node3D
 
 		bottleScene = GD.Load<PackedScene>("res://Scenes/Objects/Bottle.tscn");
 
-		throwTimer.WaitTime = random.Next(2, 8);
+		throwTimer.WaitTime = random.Next(10, 20);
 		throwTimer.CallDeferred("start");
 
 		level = GetParent<Level>();
@@ -36,7 +36,7 @@ public partial class BottleThrower : Node3D
 
 		GetParent().AddChild(bottle);
 		
-		throwTimer.WaitTime = random.Next(2, 8);
+		throwTimer.WaitTime = random.Next(10, 20);
 		throwTimer.CallDeferred("start");
 	}
 

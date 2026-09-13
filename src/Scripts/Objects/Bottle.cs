@@ -15,13 +15,17 @@ public partial class Bottle : CharacterBody3D
 
 	Random random = new Random();
 
+	Level level;
+
 	public override void _Ready()
 	{
 		sprite = GetNode<Sprite3D>("Sprite3D");
 		hitbox = GetNode<Area3D>("Area3D");
 		hitbox.BodyEntered += CheckCollision;
 
-		moveSpeed = random.Next(10, 20);
+		moveSpeed = random.Next(10, 40);
+
+		level = GetParent<Level>();
 	}
 
 	private void CheckCollision(Node3D body)
@@ -35,6 +39,7 @@ public partial class Bottle : CharacterBody3D
 			effect.Position = new Vector3(GlobalPosition.X, GlobalPosition.Y, GlobalPosition.Z);
 
 			GetParent().AddChild(effect);
+			level.glassSound.Play();
 
 			QueueFree();
 		}
@@ -57,6 +62,7 @@ public partial class Bottle : CharacterBody3D
 			effect.Position = new Vector3(GlobalPosition.X, GlobalPosition.Y + 0.5f, GlobalPosition.Z);
 
 			GetParent().AddChild(effect);
+			level.glassSound.Play();
 
 			QueueFree();
 		}

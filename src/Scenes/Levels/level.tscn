@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b6qf4gjv7qo6q" path="res://Scripts/Misc/Level.cs" id="1_f1n8c"]
 [ext_resource type="Environment" uid="uid://dmm8gd344rpmm" path="res://Misc/LevelEnvironment.tres" id="2_7x7pb"]
 [ext_resource type="AudioStream" uid="uid://cu6iga776ws4v" path="res://Assets/Audio/Effects/hihat.wav" id="2_i5435"]
+[ext_resource type="AudioStream" uid="uid://qg8sy05k5aii" path="res://Assets/Audio/Effects/glass.wav" id="2_r52a4"]
 [ext_resource type="AudioStream" uid="uid://ddmldl3hbr42p" path="res://Assets/Audio/Effects/Boom.wav" id="2_tq1so"]
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="6_lhx7y"]
 [ext_resource type="Texture2D" uid="uid://c328a4la2rkky" path="res://Assets/Images/Backdrop/Bg1.PNG" id="6_rv5g2"]
@@ -28,6 +29,10 @@ size = Vector3(1, 40, 20)
 
 [node name="Level" type="Node3D" unique_id=2069482505]
 script = ExtResource("1_f1n8c")
+
+[node name="Glass" type="AudioStreamPlayer" parent="." unique_id=1963505179]
+stream = ExtResource("2_r52a4")
+bus = &"Effects"
 
 [node name="Hihat" type="AudioStreamPlayer" parent="." unique_id=532898980]
 stream = ExtResource("2_i5435")

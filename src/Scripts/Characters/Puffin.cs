@@ -16,7 +16,7 @@ public partial class Puffin : Node3D
 
 	public override void _Ready()
 	{
-		spitTimer.WaitTime = random.Next(1, 5);
+		spitTimer.WaitTime = random.Next(10, 20);
 		spitTimer.Start();
 		spitTimer.Timeout += Spit;
 
@@ -38,7 +38,7 @@ public partial class Puffin : Node3D
 
 		spitSound.Play();
 
-		spitTimer.WaitTime = random.Next(1, 5);
+		spitTimer.WaitTime = random.Next(10, 20);
 		spitTimer.Start();
 
 		sprite.Play();
