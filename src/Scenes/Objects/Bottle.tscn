@@ -16,6 +16,7 @@ script = ExtResource("1_aycse")
 shape = SubResource("BoxShape3D_5ai5x")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=833435633]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shaded = true
 alpha_cut = 2
 texture = ExtResource("2_k7uny")

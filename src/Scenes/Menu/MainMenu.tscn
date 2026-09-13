@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cyvd2uhopeyxe" path="res://Assets/Images/Backdrop/Bg2.PNG" id="4_s3ie0"]
 [ext_resource type="Texture2D" uid="uid://cjr5i3143mlw7" path="res://Assets/Images/Backdrop/court.png" id="5_0nor7"]
 [ext_resource type="Texture2D" uid="uid://bhwdjftirji5m" path="res://Assets/Images/Backdrop/backdrop_hegn.png" id="5_tjif3"]
-[ext_resource type="Texture2D" uid="uid://edxm8gbyjdpq" path="res://Assets/Images/Characters/Cat.PNG" id="6_rsxkb"]
-[ext_resource type="Texture2D" uid="uid://bs6dnn1ejt5wp" path="res://Assets/Images/Characters/Bear.PNG" id="7_shv8k"]
-[ext_resource type="Texture2D" uid="uid://6gosbiynsxel" path="res://Assets/Images/Characters/Rabbit.PNG" id="8_tjif3"]
-[ext_resource type="Texture2D" uid="uid://dvvvxfl50vjlm" path="res://Assets/Images/Characters/Jelly.PNG" id="9_0nor7"]
+[ext_resource type="Texture2D" uid="uid://ci44a0weudi8g" path="res://Assets/Images/IMG_4564.png" id="7_0nor7"]
+[ext_resource type="Texture2D" uid="uid://dp1dfx5ww7xv4" path="res://Assets/Images/IMG_4565.png" id="8_828jk"]
+[ext_resource type="Texture2D" uid="uid://bld3bxpxsgyd5" path="res://Assets/Images/IMG_4563.png" id="9_syprg"]
+[ext_resource type="Texture2D" uid="uid://ctku2utxq8stv" path="res://Assets/Images/IMG_4566.png" id="10_lplmr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_828jk"]
 albedo_texture = ExtResource("5_0nor7")
@@ -111,19 +111,19 @@ transform = Transform3D(1, 0, 0, 0, 0.7743152, 0.6328001, 0, -0.6328001, 0.77431
 [node name="NPC2" type="Sprite3D" parent="Background" unique_id=488102566]
 transform = Transform3D(0.39719686, -0.15713945, 0, 0.15713945, 0.39719686, 0, 0, 0, 0.4271512, -1.4386852, 2.284766, -0.2713971)
 alpha_cut = 2
-texture = ExtResource("6_rsxkb")
+texture = ExtResource("7_0nor7")
 
 [node name="NPC3" type="Sprite3D" parent="Background" unique_id=307334092]
 transform = Transform3D(0.42715114, 0, 0, 0, 0.42715114, 0, 0, 0, 0.42715114, -0.6994921, 0.92401206, -0.2713971)
 alpha_cut = 2
-texture = ExtResource("7_shv8k")
+texture = ExtResource("8_828jk")
 
 [node name="NPC5" type="Sprite3D" parent="Background" unique_id=378409928]
 transform = Transform3D(0.42715114, 0, 0, 0, 0.42715114, 0, 0, 0, 0.42715114, -0.8316038, 4.098118, -0.2713971)
 alpha_cut = 2
-texture = ExtResource("8_tjif3")
+texture = ExtResource("9_syprg")
 
 [node name="NPC4" type="Sprite3D" parent="Background" unique_id=761583230]
 transform = Transform3D(0.41654384, 0.09460108, 0, -0.09460108, 0.41654384, 0, 0, 0, 0.4271512, 0.39948675, 3.1953857, -0.2713971)
 alpha_cut = 2
-texture = ExtResource("9_0nor7")
+texture = ExtResource("10_lplmr")

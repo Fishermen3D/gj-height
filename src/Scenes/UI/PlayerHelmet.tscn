@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d4kxljsqgraue" path="res://icon.svg" id="1_3w4jr"]
 [ext_resource type="Script" uid="uid://0rtt4e21hv5m" path="res://Scripts/HUD/PlayerHelmet.cs" id="1_deb6j"]
+[ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="2_ijq2a"]
 
 [node name="PlayerHelmet" type="Panel" unique_id=684441522]
 size_flags_horizontal = 3
@@ -20,6 +21,9 @@ alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=928497561]
 layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_ijq2a")
+theme_override_font_sizes/font_size = 32
 text = "Player x"
 horizontal_alignment = 1
 

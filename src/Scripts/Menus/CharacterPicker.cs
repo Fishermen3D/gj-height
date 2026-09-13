@@ -22,10 +22,10 @@ public partial class CharacterPicker : GameMenu
 
 		pickerContainer = GetNode<HBoxContainer>("MarginContainer/VBoxContainer/HBoxContainer");
 
-		portraits.Add(Player.CharacterType.CAT, GD.Load<Texture2D>("res://Assets/Images/Characters/Cat.PNG"));
-		portraits.Add(Player.CharacterType.BEAR, GD.Load<Texture2D>("res://Assets/Images/Characters/Bear.PNG"));
-		portraits.Add(Player.CharacterType.RABBIT, GD.Load<Texture2D>("res://Assets/Images/Characters/Rabbit.PNG"));
-		portraits.Add(Player.CharacterType.JELLYFISH, GD.Load<Texture2D>("res://Assets/Images/Characters/Jelly.PNG"));
+		portraits.Add(Player.CharacterType.CAT, GD.Load<Texture2D>("res://Assets/Images/IMG_4564.png"));
+		portraits.Add(Player.CharacterType.BEAR, GD.Load<Texture2D>("res://Assets/Images/IMG_4565.png"));
+		portraits.Add(Player.CharacterType.RABBIT, GD.Load<Texture2D>("res://Assets/Images/IMG_4563.png"));
+		portraits.Add(Player.CharacterType.JELLYFISH, GD.Load<Texture2D>("res://Assets/Images/IMG_4566.png"));
 
 		PackedScene playerPickerScene = GD.Load<PackedScene>("res://Scenes/Menu/PlayerPicker.tscn");
 

@@ -13,38 +13,38 @@ public partial class PlayerPortrait : Node
 		switch (characterType)
 		{
 			case Player.CharacterType.CAT:
-				AddTexture("res://Assets/Images/tmp_images/cat/damage4.png");
-				AddTexture("res://Assets/Images/tmp_images/cat/damage3.png");
-				AddTexture("res://Assets/Images/tmp_images/cat/damage2.png");
-				AddTexture("res://Assets/Images/tmp_images/cat/damage1.png");
-				AddTexture("res://Assets/Images/tmp_images/Cat.png");
+				AddTexture("res://Assets/Images/HP/reytt/HP_cat5.png");
+				AddTexture("res://Assets/Images/HP/reytt/HP_cat4.png");
+				AddTexture("res://Assets/Images/HP/reytt/HP_cat3.png");
+				AddTexture("res://Assets/Images/HP/reytt/HP_cat2.png");
+				AddTexture("res://Assets/Images/HP/reytt/HP_cat1.png");
 				GD.Print("Added cat portrait");
 				break;
 			
 			case Player.CharacterType.RABBIT:
-				AddTexture("res://Assets/Images/tmp_images/rabbit/Damage4.png");
-				AddTexture("res://Assets/Images/tmp_images/rabbit/Damage3.png");
-				AddTexture("res://Assets/Images/tmp_images/rabbit/Damage2.png");
-				AddTexture("res://Assets/Images/tmp_images/rabbit/Damage1.png");
-				AddTexture("res://Assets/Images/tmp_images/Rabbit.png");
+				AddTexture("res://Assets/Images/HP/Pink/HP_kanin5.png");
+				AddTexture("res://Assets/Images/HP/Pink/HP_kanin4.png");
+				AddTexture("res://Assets/Images/HP/Pink/HP_kanin3.png");
+				AddTexture("res://Assets/Images/HP/Pink/HP_kanin2.png");
+				AddTexture("res://Assets/Images/HP/Pink/HP_kanin1.png");
 				GD.Print("Added rabbit portrait");
 				break;
 			
 			case Player.CharacterType.BEAR:
-				AddTexture("res://Assets/Images/tmp_images/bear/damage4.png");
-				AddTexture("res://Assets/Images/tmp_images/bear/damage3.png");
-				AddTexture("res://Assets/Images/tmp_images/bear/damage2.png");
-				AddTexture("res://Assets/Images/tmp_images/bear/damage1.png");
-				AddTexture("res://Assets/Images/tmp_images/Fox.png");
+				AddTexture("res://Assets/Images/HP/Turkis/HP_bjorn5.png");
+				AddTexture("res://Assets/Images/HP/Turkis/HP_bjorn4.png");
+				AddTexture("res://Assets/Images/HP/Turkis/HP_bjorn3.png");
+				AddTexture("res://Assets/Images/HP/Turkis/HP_bjorn2.png");
+				AddTexture("res://Assets/Images/HP/Turkis/HP_bjorn1.png");
 				GD.Print("Added bear portrait");
 				break;
 			
 			case Player.CharacterType.JELLYFISH:
-				AddTexture("res://Assets/Images/tmp_images/Jelly/Damage4.png");
-				AddTexture("res://Assets/Images/tmp_images/Jelly/Damage3.png");
-				AddTexture("res://Assets/Images/tmp_images/Jelly/Damage2.png");
-				AddTexture("res://Assets/Images/tmp_images/Jelly/Damage1.png");
-				AddTexture("res://Assets/Images/tmp_images/Jelly.png");
+				AddTexture("res://Assets/Images/HP/Lilla/HP_jelly5.png");
+				AddTexture("res://Assets/Images/HP/Lilla/HP_jelly4.png");
+				AddTexture("res://Assets/Images/HP/Lilla/HP_jelly3.png");
+				AddTexture("res://Assets/Images/HP/Lilla/HP_jelly2.png");
+				AddTexture("res://Assets/Images/HP/Lilla/HP_jelly1.png");
 				GD.Print("Added jelly portrait");
 				break;
 		}
