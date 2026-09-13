@@ -11,6 +11,8 @@ public partial class BottleThrower : Node3D
 
 	Random random = new Random();
 
+	Level level;
+
 	public override void _Ready()
 	{
 		throwTimer = GetNode<Timer>("Timer");
@@ -20,10 +22,14 @@ public partial class BottleThrower : Node3D
 
 		throwTimer.WaitTime = random.Next(2, 8);
 		throwTimer.CallDeferred("start");
+
+		level = GetParent<Level>();
 	}
 
 	private void ThrowBottle()
 	{
+		if(level.currentState != Level.LevelState.PLAYING){ return; }
+
 		Bottle bottle = bottleScene.Instantiate<Bottle>();
 		bottle.Position = GlobalPosition;
 		bottle.moveDirection = throwDirection;

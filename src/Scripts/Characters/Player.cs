@@ -80,6 +80,8 @@ public partial class Player : CharacterBody3D
 	double stickyTimer = 5.0;
 	double stickyTime = 0.0;
 
+	AnimatedSprite3D mark;
+
 	public static Dictionary<CharacterType, StringName> spriteFrameGroup = new()
 	{
 		{ CharacterType.NONE, new StringName() },
@@ -124,6 +126,9 @@ public partial class Player : CharacterBody3D
 		headHitEffect = GD.Load<PackedScene>("res://Scenes/Effects/HeadHitEffect.tscn");
 
 		modelPivot = GetNode<Node3D>("ModelPivot");
+
+		mark = GetNode<AnimatedSprite3D>("Xmark");
+		mark.Hide();
 	}
 
 	public override void _Process(double delta)
@@ -311,6 +316,7 @@ public partial class Player : CharacterBody3D
 			//myShape.Disabled = true;
 			hitShape.Disabled = true;
 			currentLevel.CheckPlayerCount();
+			mark.Show();
 		}
 	}
 

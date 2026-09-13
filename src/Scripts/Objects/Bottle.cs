@@ -13,11 +13,15 @@ public partial class Bottle : CharacterBody3D
 
 	Area3D hitbox;
 
+	Random random = new Random();
+
 	public override void _Ready()
 	{
 		sprite = GetNode<Sprite3D>("Sprite3D");
 		hitbox = GetNode<Area3D>("Area3D");
 		hitbox.BodyEntered += CheckCollision;
+
+		moveSpeed = random.Next(10, 20);
 	}
 
 	private void CheckCollision(Node3D body)

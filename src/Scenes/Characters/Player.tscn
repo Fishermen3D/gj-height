@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://d02yni3hvk8tb" path="res://Assets/Audio/Effects/Twang.wav" id="2_o5en2"]
 [ext_resource type="Script" uid="uid://dajx4mujnj171" path="res://Scripts/Characters/PlayerHitbox.cs" id="4_7pt4t"]
 [ext_resource type="SpriteFrames" uid="uid://bk2pjtb1kg7o2" path="res://Misc/CharacterFrames.tres" id="4_7qdam"]
+[ext_resource type="SpriteFrames" uid="uid://chob3hkfbya1w" path="res://Misc/Xmark.tres" id="6_gc10f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hm387"]
 
@@ -64,3 +65,13 @@ script = ExtResource("4_7pt4t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1989958272]
 shape = SubResource("BoxShape3D_5ai5x")
+
+[node name="Xmark" type="AnimatedSprite3D" parent="." unique_id=1414129656]
+transform = Transform3D(2.5912044, 0, 0, 0, 2.5912044, 0, 0, 0, 2.5912044, -0.10564798, 0.44747835, 0.3643105)
+billboard = 1
+no_depth_test = true
+alpha_cut = 2
+sprite_frames = ExtResource("6_gc10f")
+autoplay = "default"
+frame = 2
+frame_progress = 0.69544846
