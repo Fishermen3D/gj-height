@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6qf4gjv7qo6q" path="res://Scripts/Misc/Level.cs" id="1_f1n8c"]
 [ext_resource type="Environment" uid="uid://dmm8gd344rpmm" path="res://Misc/LevelEnvironment.tres" id="2_7x7pb"]
+[ext_resource type="AudioStream" uid="uid://cu6iga776ws4v" path="res://Assets/Audio/Effects/hihat.wav" id="2_i5435"]
 [ext_resource type="AudioStream" uid="uid://ddmldl3hbr42p" path="res://Assets/Audio/Effects/Boom.wav" id="2_tq1so"]
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="6_lhx7y"]
 [ext_resource type="Texture2D" uid="uid://c328a4la2rkky" path="res://Assets/Images/Backdrop/Bg1.PNG" id="6_rv5g2"]
@@ -19,6 +20,9 @@ size = Vector3(1, 40, 20)
 
 [node name="Level" type="Node3D" unique_id=2069482505]
 script = ExtResource("1_f1n8c")
+
+[node name="Hihat" type="AudioStreamPlayer" parent="." unique_id=532898980]
+stream = ExtResource("2_i5435")
 
 [node name="Boom" type="AudioStreamPlayer" parent="." unique_id=1348874834]
 process_mode = 3
@@ -142,3 +146,18 @@ line_spacing = -800.0
 
 [node name="Puffin" parent="." unique_id=723034941 instance=ExtResource("7_i5435")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.257578, 1.0325818, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1770341268]
+
+[node name="CountDownLabel" type="Label" parent="CanvasLayer" unique_id=1670109758]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("6_lhx7y")
+theme_override_font_sizes/font_size = 128
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -34,7 +34,7 @@ public partial class SceneTitle : Node2D
 			Callable.From<float>(UpdatePosition),
 			0.0,
 			1.0,
-			1.0f
+			0.5f
 		).SetDelay(0.25);
 
 		//tween.Finished += ChangeScene;

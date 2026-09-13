@@ -2,7 +2,9 @@
 
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="1_8erh4"]
 [ext_resource type="Script" uid="uid://dg0d3c20x10yi" path="res://Scripts/Menus/PlayerPicker.cs" id="1_rrqhn"]
+[ext_resource type="AudioStream" uid="uid://c6kt2m6wisivi" path="res://Assets/Audio/Effects/Sting.wav" id="2_8k06v"]
 [ext_resource type="Texture2D" uid="uid://d4kxljsqgraue" path="res://icon.svg" id="2_rrqhn"]
+[ext_resource type="AudioStream" uid="uid://cjp4rpjanjo1n" path="res://Assets/Audio/Effects/change.wav" id="3_0q8b2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrqhn"]
 
@@ -14,8 +16,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 64)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_rrqhn")
 script = ExtResource("1_rrqhn")
+
+[node name="Sting" type="AudioStreamPlayer" parent="." unique_id=600974696]
+stream = ExtResource("2_8k06v")
+volume_db = 10.0
+bus = &"Effects"
+
+[node name="Change" type="AudioStreamPlayer" parent="." unique_id=1638039278]
+stream = ExtResource("3_0q8b2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=274207686]
 layout_mode = 1

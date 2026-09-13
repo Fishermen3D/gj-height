@@ -121,6 +121,8 @@ public partial class Player : CharacterBody3D
 
 	public override void _Process(double delta)
 	{
+		if(currentLevel.currentState == Level.LevelState.COUNTDOWN){ return; }
+
 		if (jumpInputOk)
 		{
 			okTimer += delta;

@@ -11,6 +11,8 @@ public partial class GameInfo : Node3D
 	public int winnerPlayerIndex = 1;
 	public Player.CharacterType winnerType = Player.CharacterType.JELLYFISH;
 
+	public MusicManager musicManager;
+
 	//TitleLabel titleLabel;
 
 	public List<Player.CharacterType> characterTypes = new()
@@ -80,6 +82,11 @@ public partial class GameInfo : Node3D
 		transitionLayer.AddChild(matrixEffect);
 
 		AddChild(transitionLayer);
+
+		PackedScene musicScene = GD.Load<PackedScene>("res://Scenes/Misc/MusicManager.tscn");
+		musicManager = musicScene.Instantiate<MusicManager>();
+
+		AddChild(musicManager);
 
 		/*PackedScene titleLabelScene = GD.Load<PackedScene>("res://Scenes/UI/TitleLabel.tscn");
 		titleLabel = titleLabelScene.Instantiate<TitleLabel>();

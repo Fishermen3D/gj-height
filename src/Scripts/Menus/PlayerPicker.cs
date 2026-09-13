@@ -23,6 +23,9 @@ public partial class PlayerPicker : Panel
 
 	Player.CharacterType selectedCharacter = Player.CharacterType.NONE;
 
+	AudioStreamPlayer readySound;
+	AudioStreamPlayer changeSound;
+
 	Dictionary<int, Player.CharacterType> portraitIndex = new()
 	{
 		{0, Player.CharacterType.CAT},
@@ -43,6 +46,9 @@ public partial class PlayerPicker : Panel
 		portrait = GetNode<TextureRect>("VBoxContainer/TextureRect");
 		currentCharacter = playerIndex;
 		portrait.Texture = pickerMenu.GetPortrait(portraitIndex[playerIndex]);
+		
+		readySound = GetNode<AudioStreamPlayer>("Sting");
+		changeSound = GetNode<AudioStreamPlayer>("Change");
 	}
 
 	public override void _Process(double delta)
@@ -61,6 +67,7 @@ public partial class PlayerPicker : Panel
 				}
 
 				portrait.Texture = pickerMenu.GetPortrait(portraitIndex[currentCharacter]);
+				changeSound.Play();
 			}
 
 			if (Input.IsActionJustPressed(rightInput))
@@ -75,6 +82,7 @@ public partial class PlayerPicker : Panel
 				}
 
 				portrait.Texture = pickerMenu.GetPortrait(portraitIndex[currentCharacter]);
+				changeSound.Play();
 			}
 
 			if (Input.IsActionJustPressed(selectInput))
@@ -83,6 +91,7 @@ public partial class PlayerPicker : Panel
 				isReady = true;
 				readyLabel.Text = "Ready!";
 				selectedCharacter = portraitIndex[currentCharacter];
+				readySound.Play();
 			}
 		}
 	}

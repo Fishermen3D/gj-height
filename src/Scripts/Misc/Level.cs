@@ -3,8 +3,15 @@ using System;
 
 public partial class Level : GameScene
 {
+	public enum LevelState
+	{
+		COUNTDOWN,
+		PLAYING
+	}
 
-	Vector3 startSpawnPoint = new Vector3(-4.0f, 0.0f, 0.0f);
+	public LevelState currentState = LevelState.COUNTDOWN;
+
+	Vector3 startSpawnPoint = new Vector3(-4.0f, 1.0f, 0.0f);
 
 	Timer winTimer;
 
@@ -14,6 +21,13 @@ public partial class Level : GameScene
 
 	GameCamera camera;
 	HealthManager healthManager;
+
+	Label countDownLabel;
+
+	AudioStreamPlayer hihatSound;
+
+	double countTimer = 1.0;
+	int currentCount = 3;
 
 	public override void _Ready()
 	{
@@ -48,10 +62,18 @@ public partial class Level : GameScene
 		boomSound = GetNode<AudioStreamPlayer>("Boom");
 		matchOverLabel = GetNode<Label3D>("MatchOverLabel");
 		matchOverLabel.Hide();
+
+		countDownLabel = GetNode<Label>("CanvasLayer/CountDownLabel");
+		countDownLabel.Text = "3";
+
+		gameInfo.musicManager.StopSong();
+
+		hihatSound = GetNode<AudioStreamPlayer>("Hihat");
 	}
 
 	private void GoToWinScreen()
 	{
+		gameInfo.musicManager.PlayResults();
 		sceneManager.ChangeScene("res://Scenes/Menu/ResultMenu.tscn", SceneManager.TransitionType.MATRIX, "And the\nwinner is.");
 	}
 
@@ -97,6 +119,7 @@ public partial class Level : GameScene
 
 			boomSound.Play();
 			winTimer.Start();
+			gameInfo.musicManager.StopSong();
 
 			//matchOverLabel.GlobalPosition = new Vector3(camera.GlobalPosition.X, matchOverLabel.GlobalPosition.Y, matchOverLabel.GlobalPosition.Z);
 			matchOverLabel.Show();
@@ -106,6 +129,28 @@ public partial class Level : GameScene
 
 	public override void _Process(double delta)
 	{
-		
+		countTimer -= delta;
+		if(countTimer <= 0.0)
+		{
+			currentCount--;
+			countDownLabel.Text = $"{currentCount}";
+			hihatSound.Play();
+
+			if(currentCount == 0)
+			{
+				gameInfo.musicManager.PlayLevel();
+				currentState = LevelState.PLAYING;
+				countDownLabel.Text = "GO!";
+			}
+
+			if(currentCount == -1)
+			{
+				countDownLabel.Hide();
+				
+				
+				SetProcess(false);
+			}
+			countTimer = 1;
+		}
 	}
 }

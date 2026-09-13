@@ -70,6 +70,8 @@ public partial class CharacterPicker : GameMenu
 				}
 			}
 
+			//gameInfo.musicManager.StopSong();
+
 			//sceneManager.ChangeScene("res://Scenes/Levels/level.tscn", SceneManager.TransitionType.MATRIX, "Get\nReady!");
 		}
 	}

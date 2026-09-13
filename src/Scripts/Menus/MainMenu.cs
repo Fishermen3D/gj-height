@@ -15,6 +15,8 @@ public partial class MainMenu : GameMenu
 		startGameButton.GrabFocus();
 
 		quitGameButton.Pressed += QuitGame;
+
+		gameInfo.musicManager.PlayTheme();
 	}
 
 	private void QuitGame()

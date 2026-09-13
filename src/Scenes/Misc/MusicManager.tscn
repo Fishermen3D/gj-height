@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://des8fgq50n1h3"]
+
+[ext_resource type="Script" uid="uid://djnrvygdu3mrp" path="res://Scripts/Systems/MusicManager.cs" id="1_k4khd"]
+
+[node name="MusicManager" type="Node" unique_id=1181261759 node_paths=PackedStringArray("currentSong")]
+script = ExtResource("1_k4khd")
+currentSong = NodePath("CurrentSong")
+
+[node name="CurrentSong" type="AudioStreamPlayer" parent="." unique_id=1150795275]
