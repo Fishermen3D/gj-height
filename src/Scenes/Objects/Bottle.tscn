@@ -21,6 +21,7 @@ alpha_cut = 2
 texture = ExtResource("2_k7uny")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1341466549]
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=527540299]
 shape = SubResource("BoxShape3D_hm387")

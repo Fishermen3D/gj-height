@@ -11,9 +11,29 @@ public partial class Bottle : CharacterBody3D
 
 	Sprite3D sprite;
 
+	Area3D hitbox;
+
 	public override void _Ready()
 	{
 		sprite = GetNode<Sprite3D>("Sprite3D");
+		hitbox = GetNode<Area3D>("Area3D");
+		hitbox.BodyEntered += CheckCollision;
+	}
+
+	private void CheckCollision(Node3D body)
+	{
+		if(body is Player player)
+		{
+			player.knockDown();
+
+			PackedScene breakScene = GD.Load<PackedScene>("res://Scenes/Effects/HeadHitEffect.tscn");
+			Node3D effect = breakScene.Instantiate<Node3D>();
+			effect.Position = new Vector3(GlobalPosition.X, GlobalPosition.Y, GlobalPosition.Z);
+
+			GetParent().AddChild(effect);
+
+			QueueFree();
+		}
 	}
 
 	public override void _Process(double delta)
