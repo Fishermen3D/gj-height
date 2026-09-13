@@ -86,6 +86,8 @@ public partial class Player : CharacterBody3D
 
 	Sprite3D gumSprite;
 
+	PackedScene boostEffectScene;
+
 	public static Dictionary<CharacterType, StringName> spriteFrameGroup = new()
 	{
 		{ CharacterType.NONE, new StringName() },
@@ -137,6 +139,8 @@ public partial class Player : CharacterBody3D
 		downSound = GetNode<AudioStreamPlayer>("Down");
 		gumSprite = GetNode<Sprite3D>("GumSprite");
 		gumSprite.Hide();
+
+		boostEffectScene = GD.Load<PackedScene>("res://Scenes/Effects/BoostEffect.tscn");
 	}
 
 	public override void _Process(double delta)
@@ -194,9 +198,19 @@ public partial class Player : CharacterBody3D
 				*/
 				Jump();
 				jumpInputOk = false;
+
+				
+				Node3D boostNode = boostEffectScene.Instantiate<Node3D>();
+				boostNode.Position = GlobalPosition;
+				currentLevel.AddChild(boostNode);
 			}
 			else
 			{
+
+				Node3D groundHitNode = groundHitScene.Instantiate<Node3D>();
+				groundHitNode.Position = GlobalPosition;
+				currentLevel.AddChild(groundHitNode);
+
 				/*baseJumpForce = jumpForceReset;
 				fallVelocity = baseJumpForce;*/
 				if (!sticky)
@@ -213,9 +227,6 @@ public partial class Player : CharacterBody3D
 			soundToPlay.PitchScale = (float)random.NextDouble() + 0.5f;
 			soundToPlay.Play();
 
-			Node3D groundHitNode = groundHitScene.Instantiate<Node3D>();
-			groundHitNode.Position = GlobalPosition;
-			currentLevel.AddChild(groundHitNode);
 		}
 		else
 		{
@@ -333,7 +344,7 @@ public partial class Player : CharacterBody3D
 	public void MakeSticky()
 	{
 		if(currentState == PlayerState.DEAD){ return; }
-		
+
 		sticky = true;
 		Jump();
 		gumSprite.Show();

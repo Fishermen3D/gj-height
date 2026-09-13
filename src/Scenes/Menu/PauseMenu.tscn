@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhygnmkm70yq1"]
 
 [ext_resource type="Script" uid="uid://dg3ulcqbux6pt" path="res://Scripts/Menus/PauseMenu.cs" id="1_0vmhm"]
+[ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="2_mvmem"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=62451831 node_paths=PackedStringArray("quitGameButton", "resumeGameButton")]
 layer = 10
@@ -43,7 +44,8 @@ alignment = 1
 
 [node name="Label" type="Label" parent="PauseMenu/ColorRect/MarginContainer/VBoxContainer" unique_id=1578032171]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("2_mvmem")
+theme_override_font_sizes/font_size = 128
 text = "Pause"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -54,10 +56,14 @@ custom_maximum_size = Vector2(300, -1)
 layout_mode = 2
 size_flags_horizontal = 4
 offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("2_mvmem")
+theme_override_font_sizes/font_size = 64
 text = "Resume"
 
 [node name="QuitButton" type="Button" parent="PauseMenu/ColorRect/MarginContainer/VBoxContainer" unique_id=560025455]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_mvmem")
+theme_override_font_sizes/font_size = 64
 text = "Quit"

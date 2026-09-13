@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://u17dqvm7230j"]
+
+[ext_resource type="Script" uid="uid://vu8do1upef77" path="res://Scripts/HUD/PlayerPortrait.cs" id="1_hjeco"]
+
+[node name="PlayerPortrait" type="Node" unique_id=1819317320]
+script = ExtResource("1_hjeco")

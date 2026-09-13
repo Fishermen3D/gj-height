@@ -12,6 +12,10 @@ public partial class PlayerHelmet : Panel
 
 	TextureRect portrait;
 
+	public PlayerPortrait portraitGroup;
+
+	public Player.CharacterType characterType = Player.CharacterType.NONE;
+
 	Dictionary<Player.CharacterType, string> CharacterPortraits = new()
 	{
 		{ Player.CharacterType.CAT, "res://Assets/Images/tmp_images/Cat.png" },
@@ -20,12 +24,24 @@ public partial class PlayerHelmet : Panel
 		{ Player.CharacterType.JELLYFISH, "res://Assets/Images/tmp_images/Jelly.png" }
 	};
 
+	Texture2D skullTexture;
+
 
 	public override void _Ready()
 	{
 		SetProcess(false);
 		playerNameLabel = GetNode<Label>("HBoxContainer/Label");
 		playerNameLabel.Text = $"Player {playerIndex}";
+
+		portraitGroup = new PlayerPortrait();
+		portraitGroup.characterType = characterType;
+
+		AddChild(portraitGroup);
+
+		portrait = GetNode<TextureRect>("HBoxContainer/TextureRect");
+		portrait.Texture = portraitGroup.GetPortrait(health - 1);
+
+		skullTexture = GD.Load<Texture2D>("res://Assets/Images/Skull.png");
 	}
 
 	public void SetCharacter(Player.CharacterType character)
@@ -48,7 +64,7 @@ public partial class PlayerHelmet : Panel
 		if(health - 1 <= 0)
 		{
 			health = 0;
-			playerNameLabel.Text = "Player (0)";
+			portrait.Texture = skullTexture;
 			return true;
 		}
 		else
@@ -56,7 +72,10 @@ public partial class PlayerHelmet : Panel
 			health--;
 		}
 
-		playerNameLabel.Text = $"Player ({health})";
+		if(health >= 0)
+		{
+			portrait.Texture = portraitGroup.GetPortrait(health-1);
+		}
 
 		return false;
 	}
