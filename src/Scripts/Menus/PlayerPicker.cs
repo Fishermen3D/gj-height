@@ -26,6 +26,8 @@ public partial class PlayerPicker : Panel
 	AudioStreamPlayer readySound;
 	AudioStreamPlayer changeSound;
 
+	Label nameLabel;
+
 	Dictionary<int, Player.CharacterType> portraitIndex = new()
 	{
 		{0, Player.CharacterType.CAT},
@@ -39,6 +41,9 @@ public partial class PlayerPicker : Panel
 		leftInput = new StringName($"{inputPrefix}_left");
 		rightInput = new StringName($"{inputPrefix}_right");
 		selectInput = new StringName($"{inputPrefix}_jump");
+
+		nameLabel = GetNode<Label>("VBoxContainer/Label");
+		nameLabel.Text = $"Player {playerIndex + 1}";
 
 		readyLabel = GetNode<Label>("VBoxContainer/ReadyLabel");
 		readyLabel.Text = string.Empty;
