@@ -9,6 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://ccx1n3p0idm8p" path="res://Scenes/Characters/Puffin.tscn" id="7_i5435"]
 [ext_resource type="Texture2D" uid="uid://cyvd2uhopeyxe" path="res://Assets/Images/Backdrop/Bg2.PNG" id="7_lhx7y"]
 [ext_resource type="Script" uid="uid://b1cqji7dum8rj" path="res://Scripts/Misc/BottleThrower.cs" id="9_jbixu"]
+[ext_resource type="Texture2D" uid="uid://brolhsg5hbsj3" path="res://Assets/Images/Npcs/NPC_fish.png" id="10_on2c6"]
+[ext_resource type="Texture2D" uid="uid://c7lyp6gg0ivj4" path="res://Assets/Images/Npcs/NPC_hyena.png" id="11_vn0m0"]
+[ext_resource type="Texture2D" uid="uid://tyhwum1n7mja" path="res://Assets/Images/Npcs/NPC_manatee.png" id="12_r52a4"]
+[ext_resource type="Texture2D" uid="uid://4sojef5y6fbb" path="res://Assets/Images/Npcs/NPC_mouse1.png" id="13_jlsip"]
+[ext_resource type="Texture2D" uid="uid://dsfi1424wrj15" path="res://Assets/Images/Npcs/NPC_mouse2.png" id="14_tpnyl"]
+[ext_resource type="Texture2D" uid="uid://4l022w8dkbht" path="res://Assets/Images/Npcs/NPC_opossum.png" id="15_kfsb8"]
+[ext_resource type="Texture2D" uid="uid://b16jsb8qunndg" path="res://Assets/Images/Npcs/NPC_poodle.png" id="16_vn0m0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hm387"]
 size = Vector3(40, 1, 10)
@@ -171,3 +178,38 @@ throwDirection = -1
 [node name="Timer" type="Timer" parent="BottleThrower" unique_id=1690442512]
 one_shot = true
 autostart = true
+
+[node name="NPC" type="Sprite3D" parent="." unique_id=443585771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.485819, 0.8393228, -2.0911438)
+alpha_cut = 2
+texture = ExtResource("10_on2c6")
+
+[node name="NPC2" type="Sprite3D" parent="." unique_id=1135931968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.574035, 1.2583139, -1.4302468)
+alpha_cut = 2
+texture = ExtResource("11_vn0m0")
+
+[node name="NPC3" type="Sprite3D" parent="." unique_id=1500500824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.154827, 1.5266573, -3.7789893)
+alpha_cut = 2
+texture = ExtResource("12_r52a4")
+
+[node name="NPC4" type="Sprite3D" parent="." unique_id=1427985990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.010475, 0.6556823, -1.7836001)
+alpha_cut = 2
+texture = ExtResource("13_jlsip")
+
+[node name="NPC5" type="Sprite3D" parent="." unique_id=391043679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.159293, 0.6556823, -3.7789893)
+alpha_cut = 2
+texture = ExtResource("14_tpnyl")
+
+[node name="NPC6" type="Sprite3D" parent="." unique_id=1344140383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0159855, 0.6556823, -1.808085)
+alpha_cut = 2
+texture = ExtResource("15_kfsb8")
+
+[node name="NPC7" type="Sprite3D" parent="." unique_id=1335820773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.443554, 1.1750245, 2.2210107)
+alpha_cut = 2
+texture = ExtResource("16_vn0m0")
