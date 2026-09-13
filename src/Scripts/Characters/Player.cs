@@ -319,4 +319,9 @@ public partial class Player : CharacterBody3D
 		sticky = true;
 		Jump();
 	}
+
+	public void knockDown()
+	{
+		fallVelocity = -20;
+	}
 }
