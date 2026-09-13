@@ -12,6 +12,8 @@ public partial class HowToPlayMenu : GameMenu
 
 		nextButton.Pressed += GoToCountPicker;
 		returnButton.Pressed += GoToMenu;
+
+		nextButton.CallDeferred("grab_focus");
 	}
 
 	private void GoToMenu()

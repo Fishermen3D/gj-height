@@ -18,7 +18,6 @@ public partial class PlayerPortrait : Node
 				AddTexture("res://Assets/Images/HP/reytt/HP_cat3.png");
 				AddTexture("res://Assets/Images/HP/reytt/HP_cat2.png");
 				AddTexture("res://Assets/Images/HP/reytt/HP_cat1.png");
-				GD.Print("Added cat portrait");
 				break;
 			
 			case Player.CharacterType.RABBIT:
@@ -27,7 +26,6 @@ public partial class PlayerPortrait : Node
 				AddTexture("res://Assets/Images/HP/Pink/HP_kanin3.png");
 				AddTexture("res://Assets/Images/HP/Pink/HP_kanin2.png");
 				AddTexture("res://Assets/Images/HP/Pink/HP_kanin1.png");
-				GD.Print("Added rabbit portrait");
 				break;
 			
 			case Player.CharacterType.BEAR:
@@ -36,7 +34,6 @@ public partial class PlayerPortrait : Node
 				AddTexture("res://Assets/Images/HP/Turkis/HP_bjorn3.png");
 				AddTexture("res://Assets/Images/HP/Turkis/HP_bjorn2.png");
 				AddTexture("res://Assets/Images/HP/Turkis/HP_bjorn1.png");
-				GD.Print("Added bear portrait");
 				break;
 			
 			case Player.CharacterType.JELLYFISH:
@@ -45,7 +42,6 @@ public partial class PlayerPortrait : Node
 				AddTexture("res://Assets/Images/HP/Lilla/HP_jelly3.png");
 				AddTexture("res://Assets/Images/HP/Lilla/HP_jelly2.png");
 				AddTexture("res://Assets/Images/HP/Lilla/HP_jelly1.png");
-				GD.Print("Added jelly portrait");
 				break;
 		}
 
