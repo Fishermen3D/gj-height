@@ -193,9 +193,6 @@ public partial class Player : CharacterBody3D
 		{
 			if (jumpInputOk)
 			{
-				/*baseJumpForce += jumpAddition;
-				fallVelocity = baseJumpForce;
-				*/
 				Jump();
 				jumpInputOk = false;
 
@@ -211,8 +208,6 @@ public partial class Player : CharacterBody3D
 				groundHitNode.Position = GlobalPosition;
 				currentLevel.AddChild(groundHitNode);
 
-				/*baseJumpForce = jumpForceReset;
-				fallVelocity = baseJumpForce;*/
 				if (!sticky)
 				{
 					ResetJump();
@@ -221,7 +216,6 @@ public partial class Player : CharacterBody3D
 				{
 					Jump();
 				}
-				//Jump();
 			}
 
 			soundToPlay.PitchScale = (float)random.NextDouble() + 0.5f;

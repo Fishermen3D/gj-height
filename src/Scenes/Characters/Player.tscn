@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://batblref74g3u" path="res://Assets/Audio/Effects/down.wav" id="2_qkgjm"]
 [ext_resource type="Script" uid="uid://dajx4mujnj171" path="res://Scripts/Characters/PlayerHitbox.cs" id="4_7pt4t"]
 [ext_resource type="SpriteFrames" uid="uid://bk2pjtb1kg7o2" path="res://Misc/CharacterFrames.tres" id="4_7qdam"]
+[ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="5_meglp"]
 [ext_resource type="SpriteFrames" uid="uid://chob3hkfbya1w" path="res://Misc/Xmark.tres" id="6_gc10f"]
 [ext_resource type="Texture2D" uid="uid://ub25aydql26s" path="res://Assets/Images/Gum.png" id="8_w38he"]
 
@@ -40,9 +41,12 @@ bus = &"Effects"
 shape = SubResource("CapsuleShape3D_hm387")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=778453648]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.076643, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3107738, 0)
+alpha_cut = 2
 text = "Px"
-font_size = 64
+font = ExtResource("5_meglp")
+font_size = 128
+outline_size = 32
 
 [node name="ModelPivot" type="Node3D" parent="." unique_id=1357736676]
 

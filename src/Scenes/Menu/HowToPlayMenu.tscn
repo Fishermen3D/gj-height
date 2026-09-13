@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bqo7ysjrtkcfa"]
+
+[ext_resource type="Texture2D" uid="uid://cg25nt02y6if0" path="res://Assets/Images/menuBackdrop.png" id="1_qh1hm"]
+[ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="2_dof4k"]
+[ext_resource type="Script" uid="uid://lraimphwsmgo" path="res://Scripts/Menus/HowToPlayMenu.cs" id="2_yxlnj"]
+
+[node name="Control" type="TextureRect" unique_id=1771953929 node_paths=PackedStringArray("nextButton", "returnButton")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qh1hm")
+script = ExtResource("2_yxlnj")
+nextButton = NodePath("MarginContainer/VBoxContainer/HBoxContainer/NextButton")
+returnButton = NodePath("MarginContainer/VBoxContainer/HBoxContainer/ReturnButton")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=885597414]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1727482963]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1019233966]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dof4k")
+theme_override_font_sizes/font_size = 128
+text = "How to play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=363058047]
+layout_mode = 2
+alignment = 1
+
+[node name="ReturnButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=689130413]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dof4k")
+theme_override_font_sizes/font_size = 64
+text = "Return"
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=880521423]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dof4k")
+theme_override_font_sizes/font_size = 64
+text = "Next"
