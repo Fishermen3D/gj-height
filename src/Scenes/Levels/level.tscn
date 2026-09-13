@@ -5,8 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://cu6iga776ws4v" path="res://Assets/Audio/Effects/hihat.wav" id="2_i5435"]
 [ext_resource type="AudioStream" uid="uid://qg8sy05k5aii" path="res://Assets/Audio/Effects/glass.wav" id="2_r52a4"]
 [ext_resource type="AudioStream" uid="uid://ddmldl3hbr42p" path="res://Assets/Audio/Effects/Boom.wav" id="2_tq1so"]
+[ext_resource type="Texture2D" uid="uid://bhwdjftirji5m" path="res://Assets/Images/Backdrop/backdrop_hegn.png" id="5_jlsip"]
+[ext_resource type="Texture2D" uid="uid://cjr5i3143mlw7" path="res://Assets/Images/Backdrop/court.png" id="5_tpnyl"]
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="6_lhx7y"]
-[ext_resource type="Texture2D" uid="uid://c328a4la2rkky" path="res://Assets/Images/Backdrop/Bg1.PNG" id="6_rv5g2"]
 [ext_resource type="PackedScene" uid="uid://ccx1n3p0idm8p" path="res://Scenes/Characters/Puffin.tscn" id="7_i5435"]
 [ext_resource type="Texture2D" uid="uid://cb5ua673v1bds" path="res://Assets/Images/Backdrop/Trees.PNG" id="7_jlsip"]
 [ext_resource type="Texture2D" uid="uid://cyvd2uhopeyxe" path="res://Assets/Images/Backdrop/Bg2.PNG" id="7_lhx7y"]
@@ -24,6 +25,9 @@ size = Vector3(40, 1, 10)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hm387"]
 size = Vector2(40, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpnyl"]
+albedo_texture = ExtResource("5_tpnyl")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ai5x"]
 size = Vector3(1, 40, 20)
@@ -50,81 +54,94 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_hm387")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1118646342]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.8417403, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.6634917, 0, 0, 8.860499)
 mesh = SubResource("PlaneMesh_hm387")
+surface_material_override/0 = SubResource("StandardMaterial3D_tpnyl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1170409250]
 transform = Transform3D(0.6139149, -0.4422463, 0.6538553, 0, 0.82832325, 0.5602506, -0.7893722, -0.34394622, 0.50851995, 3.3988204, 8.097286, 0)
 shadow_enabled = true
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1570483143]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 3.3049092, -4.2906456)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6000004, 2.2805552, -4.2906456)
 shaded = true
 alpha_cut = 2
-texture = ExtResource("6_rv5g2")
+texture = ExtResource("5_jlsip")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1341084794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.840803, 2.2805552, -4.2906456)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("5_jlsip")
+
+[node name="Sprite3D17" type="Sprite3D" parent="." unique_id=1374419528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6000004, 2.2805552, 8.701001)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("5_jlsip")
+
+[node name="Sprite3D18" type="Sprite3D" parent="." unique_id=619751227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.840803, 2.2805552, 8.701001)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("5_jlsip")
 
 [node name="Sprite3D7" type="Sprite3D" parent="." unique_id=116177830]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.957693, 3.3049092, 5.021759)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.957693, 2.406952, 10.407376)
 shaded = true
 alpha_cut = 2
-texture = ExtResource("6_rv5g2")
+texture = ExtResource("5_jlsip")
 
 [node name="Sprite3D8" type="Sprite3D" parent="." unique_id=1757934609]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.125011, 3.3049092, 5.021759)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.125011, 2.282025, 10.313243)
 shaded = true
 alpha_cut = 2
-texture = ExtResource("6_rv5g2")
-
-[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=435941042]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6, 3.3049092, -4.2906456)
-shaded = true
-alpha_cut = 2
-texture = ExtResource("6_rv5g2")
+texture = ExtResource("5_jlsip")
 
 [node name="Sprite3D3" type="Sprite3D" parent="." unique_id=1433739186]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.419468, 4.9728703, -6.86633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.419468, 1.8872323, -6.86633)
 shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D4" type="Sprite3D" parent="." unique_id=870571878]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.293179, 4.9728703, -6.86633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.293179, 1.8872323, -6.86633)
 shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D5" type="Sprite3D" parent="." unique_id=1464387839]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.313891, 3.7725616, -14.360028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.313891, 0.6869235, -14.360028)
 shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D6" type="Sprite3D" parent="." unique_id=572622826]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.1876, 3.7725616, -14.360028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.1876, 0.6869235, -14.360028)
 shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D9" type="Sprite3D" parent="." unique_id=2141131176]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.01905, 4.9728703, -6.86633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.01905, 1.8872323, -6.86633)
 shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D10" type="Sprite3D" parent="." unique_id=1873180742]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.14534, 4.9728703, -6.86633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.14534, 1.8872323, -6.86633)
 shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D11" type="Sprite3D" parent="." unique_id=1632972540]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.124626, 3.7725616, -14.360028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.124626, 0.6869235, -14.360028)
 shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
 
 [node name="Sprite3D12" type="Sprite3D" parent="." unique_id=1611814526]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.250919, 3.7725616, -14.360028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.250919, 0.6869235, -14.360028)
 shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")

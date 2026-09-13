@@ -3,14 +3,19 @@
 [ext_resource type="Script" uid="uid://c0qrt1yr8k7yd" path="res://Scripts/Menus/MainMenu.cs" id="1_mj0i0"]
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="2_mj0i0"]
 [ext_resource type="Environment" uid="uid://dmm8gd344rpmm" path="res://Misc/LevelEnvironment.tres" id="3_35riq"]
-[ext_resource type="Texture2D" uid="uid://c328a4la2rkky" path="res://Assets/Images/Backdrop/Bg1.PNG" id="4_p4pvn"]
 [ext_resource type="Texture2D" uid="uid://cyvd2uhopeyxe" path="res://Assets/Images/Backdrop/Bg2.PNG" id="4_s3ie0"]
+[ext_resource type="Texture2D" uid="uid://cjr5i3143mlw7" path="res://Assets/Images/Backdrop/court.png" id="5_0nor7"]
+[ext_resource type="Texture2D" uid="uid://bhwdjftirji5m" path="res://Assets/Images/Backdrop/backdrop_hegn.png" id="5_tjif3"]
 [ext_resource type="Texture2D" uid="uid://edxm8gbyjdpq" path="res://Assets/Images/Characters/Cat.PNG" id="6_rsxkb"]
 [ext_resource type="Texture2D" uid="uid://bs6dnn1ejt5wp" path="res://Assets/Images/Characters/Bear.PNG" id="7_shv8k"]
 [ext_resource type="Texture2D" uid="uid://6gosbiynsxel" path="res://Assets/Images/Characters/Rabbit.PNG" id="8_tjif3"]
 [ext_resource type="Texture2D" uid="uid://dvvvxfl50vjlm" path="res://Assets/Images/Characters/Jelly.PNG" id="9_0nor7"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_828jk"]
+albedo_texture = ExtResource("5_0nor7")
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_hm387"]
+material = SubResource("StandardMaterial3D_828jk")
 
 [node name="MainMenu" type="Control" unique_id=1359789061 node_paths=PackedStringArray("startGameButton", "quitGameButton")]
 layout_mode = 3
@@ -43,10 +48,11 @@ alignment = 1
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1303488338]
 layout_mode = 2
 theme_override_constants/line_spacing = -49
+theme_override_constants/outline_size = 32
 theme_override_fonts/font = ExtResource("2_mj0i0")
 theme_override_font_sizes/font_size = 200
 text = "Pogo
-Royale"
+Brawl"
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=643791564]
@@ -84,20 +90,20 @@ alpha_cut = 2
 texture = ExtResource("4_s3ie0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Background" unique_id=2136726385]
-transform = Transform3D(3.9854352, 0, 0, 0, 3.9854352, 0, 0, 0, 3.9854352, -2.058579, 0, 0)
+transform = Transform3D(6.8438983, 0, -4.312976, 0, 6.099469, 0, 6.8438983, 0, 4.312976, 1.3412291, 0, 7.0363345)
 mesh = SubResource("PlaneMesh_hm387")
 
 [node name="Sprite3D2" type="Sprite3D" parent="Background" unique_id=1295852983]
-transform = Transform3D(0.4096277, 0, -0.4096277, 0, 0.57930106, 0, 0.4096277, 0, 0.4096277, 0.92640543, 1.8143077, -1.8787193)
+transform = Transform3D(0.4096277, 0, -0.4096277, 0, 0.57930106, 0, 0.4096277, 0, 0.4096277, 4.868466, 1.3369977, 2.0633416)
 shaded = true
 alpha_cut = 2
-texture = ExtResource("4_p4pvn")
+texture = ExtResource("5_tjif3")
 
 [node name="Sprite3D3" type="Sprite3D" parent="Background" unique_id=135021656]
-transform = Transform3D(0.40962765, 0, 0.4096277, 0, 0.57930106, 0, -0.4096277, 0, 0.40962765, -3.2687545, 1.8143077, -1.8787193)
+transform = Transform3D(0.40962765, 0, 0.4096277, 0, 0.57930106, 0, -0.4096277, 0, 0.40962765, -4.7914534, 1.2954948, -0.3560202)
 shaded = true
 alpha_cut = 2
-texture = ExtResource("4_p4pvn")
+texture = ExtResource("5_tjif3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Background" unique_id=2130757614]
 transform = Transform3D(1, 0, 0, 0, 0.7743152, 0.6328001, 0, -0.6328001, 0.7743152, 5.89991, 5.2591534, 0)
