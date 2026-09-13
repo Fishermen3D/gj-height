@@ -26,7 +26,7 @@ public partial class Gum : CharacterBody3D
 
 	public override void _Ready()
 	{
-		moveSpeed = random.Next(5, 20);
+		moveSpeed = random.Next(5, 60);
 
 		area = GetNode<Area3D>("Area3D");
 		area.BodyEntered += CheckCollision;

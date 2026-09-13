@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://dck2bp2tr3qfj"]
 
 [ext_resource type="Script" uid="uid://ds4mnqbn5ptb6" path="res://Scripts/Menus/CharacterPicker.cs" id="1_ig7m6"]
+[ext_resource type="Texture2D" uid="uid://cg25nt02y6if0" path="res://Assets/Images/menuBackdrop.png" id="1_yh0rq"]
 
-[node name="CharacterPicker" type="Control" unique_id=28615561]
-layout_mode = 3
+[node name="CharacterPicker" type="TextureRect" unique_id=628554152]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_yh0rq")
 script = ExtResource("1_ig7m6")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=773670428]

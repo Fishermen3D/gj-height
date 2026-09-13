@@ -332,6 +332,8 @@ public partial class Player : CharacterBody3D
 
 	public void MakeSticky()
 	{
+		if(currentState == PlayerState.DEAD){ return; }
+		
 		sticky = true;
 		Jump();
 		gumSprite.Show();

@@ -15,6 +15,8 @@ public partial class SceneTitle : Node2D
 	float endX;
 
 	[Export] Timer timer;
+	[Export] Timer noiseTimer;
+	[Export] AudioStreamPlayer sound;
 
 	Label label;
 
@@ -41,7 +43,14 @@ public partial class SceneTitle : Node2D
 
 		timer.Start();
 		timer.Timeout += ChangeScene;
+
+		noiseTimer.Timeout += PlaySound;
 		
+	}
+
+	private void PlaySound()
+	{
+		sound.Play();
 	}
 
 	public void UpdatePosition(float progress)

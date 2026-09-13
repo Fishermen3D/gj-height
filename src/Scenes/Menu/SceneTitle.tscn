@@ -2,15 +2,23 @@
 
 [ext_resource type="Script" uid="uid://cmm1pjs17adhv" path="res://Scripts/Misc/SceneTitle.cs" id="1_hjea1"]
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="2_0w62a"]
+[ext_resource type="AudioStream" uid="uid://ddyiiullx2tko" path="res://Assets/Audio/Effects/djNoise.wav" id="2_vn568"]
 
 [sub_resource type="Curve" id="Curve_0w62a"]
 _data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="SceneTitle" type="Node2D" unique_id=1081435070 node_paths=PackedStringArray("timer")]
+[node name="SceneTitle" type="Node2D" unique_id=1081435070 node_paths=PackedStringArray("timer", "noiseTimer", "sound")]
 script = ExtResource("1_hjea1")
 slideCurve = SubResource("Curve_0w62a")
 timer = NodePath("Timer")
+noiseTimer = NodePath("NoiseTimer")
+sound = NodePath("DjNoise")
+
+[node name="DjNoise" type="AudioStreamPlayer" parent="." unique_id=319312121]
+stream = ExtResource("2_vn568")
+volume_db = 5.0
+bus = &"Effects"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=770372049]
 
@@ -51,5 +59,10 @@ vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=1460029772]
 wait_time = 0.7
+one_shot = true
+autostart = true
+
+[node name="NoiseTimer" type="Timer" parent="." unique_id=293298716]
+wait_time = 0.35
 one_shot = true
 autostart = true

@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://tgsadi8hk0li"]
 
 [ext_resource type="Script" uid="uid://bxehui0s0ca1o" path="res://Scripts/Menus/PlayerCountPicker.cs" id="1_mg2hf"]
+[ext_resource type="Texture2D" uid="uid://cg25nt02y6if0" path="res://Assets/Images/menuBackdrop.png" id="1_ohuyd"]
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="2_bxqew"]
 
-[node name="PlayerCountPicker" type="Control" unique_id=1779344133 node_paths=PackedStringArray("twoPlayerButton", "threePlayerButton", "fourPlayerButton")]
-layout_mode = 3
+[node name="PlayerCountPicker" type="TextureRect" unique_id=1656297980 node_paths=PackedStringArray("twoPlayerButton", "threePlayerButton", "fourPlayerButton")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_ohuyd")
 script = ExtResource("1_mg2hf")
 twoPlayerButton = NodePath("MarginContainer/VBoxContainer/TwoPLayers")
 threePlayerButton = NodePath("MarginContainer/VBoxContainer/ThreePlayers")

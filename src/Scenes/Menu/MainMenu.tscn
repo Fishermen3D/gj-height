@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://c0qrt1yr8k7yd" path="res://Scripts/Menus/MainMenu.cs" id="1_mj0i0"]
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="2_mj0i0"]
+[ext_resource type="Environment" uid="uid://dmm8gd344rpmm" path="res://Misc/LevelEnvironment.tres" id="3_35riq"]
+[ext_resource type="Texture2D" uid="uid://c328a4la2rkky" path="res://Assets/Images/Backdrop/Bg1.PNG" id="4_p4pvn"]
+[ext_resource type="Texture2D" uid="uid://cyvd2uhopeyxe" path="res://Assets/Images/Backdrop/Bg2.PNG" id="4_s3ie0"]
+[ext_resource type="Texture2D" uid="uid://edxm8gbyjdpq" path="res://Assets/Images/Characters/Cat.PNG" id="6_rsxkb"]
+[ext_resource type="Texture2D" uid="uid://bs6dnn1ejt5wp" path="res://Assets/Images/Characters/Bear.PNG" id="7_shv8k"]
+[ext_resource type="Texture2D" uid="uid://6gosbiynsxel" path="res://Assets/Images/Characters/Rabbit.PNG" id="8_tjif3"]
+[ext_resource type="Texture2D" uid="uid://dvvvxfl50vjlm" path="res://Assets/Images/Characters/Jelly.PNG" id="9_0nor7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hm387"]
 
 [node name="MainMenu" type="Control" unique_id=1359789061 node_paths=PackedStringArray("startGameButton", "quitGameButton")]
 layout_mode = 3
@@ -33,10 +42,11 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1303488338]
 layout_mode = 2
+theme_override_constants/line_spacing = -49
 theme_override_fonts/font = ExtResource("2_mj0i0")
-theme_override_font_sizes/font_size = 128
-text = "Cool game"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 200
+text = "Pogo
+Royale"
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=643791564]
@@ -44,6 +54,7 @@ layout_mode = 2
 theme_override_constants/separation = 12
 
 [node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1183748906]
+custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 offset_transform_enabled = true
 theme_override_fonts/font = ExtResource("2_mj0i0")
@@ -51,8 +62,62 @@ theme_override_font_sizes/font_size = 64
 text = "Start Game"
 
 [node name="QuitGameButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=98761002]
+custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_mj0i0")
 theme_override_font_sizes/font_size = 64
 text = "Quit game
 "
+
+[node name="Background" type="Node3D" parent="." unique_id=90599704]
+
+[node name="Camera3D" type="Camera3D" parent="Background" unique_id=464127551]
+transform = Transform3D(1, 0, 0, 0, 0.9807448, -0.19529368, 0, 0.19529368, 0.9807448, -1.9601619, 1.3876896, 2.91467)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Background" unique_id=386640561]
+environment = ExtResource("3_35riq")
+
+[node name="Sprite3D12" type="Sprite3D" parent="Background" unique_id=1936816198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.63547325, 3.4155574, -5.453767)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("4_s3ie0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background" unique_id=2136726385]
+transform = Transform3D(3.9854352, 0, 0, 0, 3.9854352, 0, 0, 0, 3.9854352, -2.058579, 0, 0)
+mesh = SubResource("PlaneMesh_hm387")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Background" unique_id=1295852983]
+transform = Transform3D(0.4096277, 0, -0.4096277, 0, 0.57930106, 0, 0.4096277, 0, 0.4096277, 0.92640543, 1.8143077, -1.8787193)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("4_p4pvn")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Background" unique_id=135021656]
+transform = Transform3D(0.40962765, 0, 0.4096277, 0, 0.57930106, 0, -0.4096277, 0, 0.40962765, -3.2687545, 1.8143077, -1.8787193)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("4_p4pvn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Background" unique_id=2130757614]
+transform = Transform3D(1, 0, 0, 0, 0.7743152, 0.6328001, 0, -0.6328001, 0.7743152, 5.89991, 5.2591534, 0)
+
+[node name="NPC2" type="Sprite3D" parent="Background" unique_id=488102566]
+transform = Transform3D(0.39719686, -0.15713945, 0, 0.15713945, 0.39719686, 0, 0, 0, 0.4271512, -1.4386852, 2.284766, -0.2713971)
+alpha_cut = 2
+texture = ExtResource("6_rsxkb")
+
+[node name="NPC3" type="Sprite3D" parent="Background" unique_id=307334092]
+transform = Transform3D(0.42715114, 0, 0, 0, 0.42715114, 0, 0, 0, 0.42715114, -0.6994921, 0.92401206, -0.2713971)
+alpha_cut = 2
+texture = ExtResource("7_shv8k")
+
+[node name="NPC5" type="Sprite3D" parent="Background" unique_id=378409928]
+transform = Transform3D(0.42715114, 0, 0, 0, 0.42715114, 0, 0, 0, 0.42715114, -0.8316038, 4.098118, -0.2713971)
+alpha_cut = 2
+texture = ExtResource("8_tjif3")
+
+[node name="NPC4" type="Sprite3D" parent="Background" unique_id=761583230]
+transform = Transform3D(0.41654384, 0.09460108, 0, -0.09460108, 0.41654384, 0, 0, 0, 0.4271512, 0.39948675, 3.1953857, -0.2713971)
+alpha_cut = 2
+texture = ExtResource("9_0nor7")
