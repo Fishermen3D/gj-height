@@ -12,7 +12,7 @@ public partial class MainMenu : GameMenu
 		base._Ready();
 
 		startGameButton.Pressed += StartGame;
-		startGameButton.GrabFocus();
+		startGameButton.CallDeferred("grab_focus");
 
 		quitGameButton.Pressed += QuitGame;
 

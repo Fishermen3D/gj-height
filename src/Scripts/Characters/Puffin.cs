@@ -4,13 +4,15 @@ using System;
 public partial class Puffin : Node3D
 {
 	[Export] AnimatedSprite3D sprite;
-	[Export] Timer spitTimer;
+	[Export] public Timer spitTimer;
 	[Export] AudioStreamPlayer spitSound;
 	[Export] Node3D spitPoint;
 
 	Random random = new Random();
 
 	PackedScene gumScene;
+
+	Level currentLevel;
 
 	public override void _Ready()
 	{
@@ -21,6 +23,8 @@ public partial class Puffin : Node3D
 		sprite.AnimationFinished += ResetAnimation;
 
 		gumScene = GD.Load<PackedScene>("res://Scenes/Objects/Gum.tscn");
+
+		currentLevel = GetParent<Level>();
 	}
 
 	private void ResetAnimation()
@@ -30,6 +34,8 @@ public partial class Puffin : Node3D
 
 	private void Spit()
 	{
+		if(currentLevel.currentState != Level.LevelState.PLAYING){ return; }
+
 		spitSound.Play();
 
 		spitTimer.WaitTime = random.Next(1, 5);

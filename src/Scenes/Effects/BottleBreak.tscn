@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://de6s4kl0a1seg"]
+
+[ext_resource type="SpriteFrames" uid="uid://cblq82vjs1wrc" path="res://Misc/BottleBreakFrames.tres" id="1_kwesl"]
+[ext_resource type="Script" uid="uid://b5606yaecgepq" path="res://Scripts/Misc/SpriteEffect.cs" id="2_7ua84"]
+
+[node name="BottleSmoke" type="AnimatedSprite3D" unique_id=1733317326]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+sprite_frames = ExtResource("1_kwesl")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+script = ExtResource("2_7ua84")

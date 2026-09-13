@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c328a4la2rkky" path="res://Assets/Images/Backdrop/Bg1.PNG" id="6_rv5g2"]
 [ext_resource type="PackedScene" uid="uid://ccx1n3p0idm8p" path="res://Scenes/Characters/Puffin.tscn" id="7_i5435"]
 [ext_resource type="Texture2D" uid="uid://cyvd2uhopeyxe" path="res://Assets/Images/Backdrop/Bg2.PNG" id="7_lhx7y"]
+[ext_resource type="Script" uid="uid://b1cqji7dum8rj" path="res://Scripts/Misc/BottleThrower.cs" id="9_jbixu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hm387"]
 size = Vector3(40, 1, 10)
@@ -161,3 +162,12 @@ theme_override_font_sizes/font_size = 128
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BottleThrower" type="Node3D" parent="." unique_id=1420476996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 7, 0)
+script = ExtResource("9_jbixu")
+throwDirection = -1
+
+[node name="Timer" type="Timer" parent="BottleThrower" unique_id=1690442512]
+one_shot = true
+autostart = true

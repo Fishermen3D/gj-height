@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cblq82vjs1wrc"]
+
+[ext_resource type="Texture2D" uid="uid://ink5l5rauti3" path="res://Assets/Images/BottleHit.png" id="1_c76h0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjv2y"]
+atlas = ExtResource("1_c76h0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccrgk"]
+atlas = ExtResource("1_c76h0")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c647s"]
+atlas = ExtResource("1_c76h0")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kst8e"]
+atlas = ExtResource("1_c76h0")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lmke"]
+atlas = ExtResource("1_c76h0")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81ijo"]
+atlas = ExtResource("1_c76h0")
+region = Rect2(256, 128, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjv2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccrgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c647s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kst8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lmke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81ijo")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 24.0
+}]

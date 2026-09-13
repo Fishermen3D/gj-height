@@ -141,6 +141,14 @@ public partial class Level : GameScene
 				gameInfo.musicManager.PlayLevel();
 				currentState = LevelState.PLAYING;
 				countDownLabel.Text = "GO!";
+
+				foreach(Node child in GetChildren())
+				{
+					if(child is Puffin puffin)
+					{
+						puffin.spitTimer.Start();
+					}
+				}
 			}
 
 			if(currentCount == -1)

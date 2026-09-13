@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://fwtdaepiyrqt"]
+
+[ext_resource type="Script" uid="uid://mmhkxk4pnp3b" path="res://Scripts/Objects/Bottle.cs" id="1_aycse"]
+[ext_resource type="Texture2D" uid="uid://be0yxtfro082" path="res://Assets/Images/Bottle.png" id="2_k7uny"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ai5x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hm387"]
+size = Vector3(1.1, 1.1, 1.1)
+
+[node name="Bottle" type="CharacterBody3D" unique_id=911622062]
+collision_mask = 5
+script = ExtResource("1_aycse")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1955630744]
+shape = SubResource("BoxShape3D_5ai5x")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=833435633]
+shaded = true
+alpha_cut = 2
+texture = ExtResource("2_k7uny")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1341466549]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=527540299]
+shape = SubResource("BoxShape3D_hm387")

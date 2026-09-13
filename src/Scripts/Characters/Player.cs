@@ -73,6 +73,13 @@ public partial class Player : CharacterBody3D
 	double okLength = 0.5;
 	double okTimer = 0.0;
 
+	public bool sticky = false;
+
+	double stickyModifier = 0.1;
+
+	double stickyTimer = 5.0;
+	double stickyTime = 0.0;
+
 	public static Dictionary<CharacterType, StringName> spriteFrameGroup = new()
 	{
 		{ CharacterType.NONE, new StringName() },
@@ -123,6 +130,17 @@ public partial class Player : CharacterBody3D
 	{
 		if(currentLevel.currentState == Level.LevelState.COUNTDOWN){ return; }
 
+		if (sticky)
+		{
+			stickyTime += delta;
+			if(stickyTime > stickyTimer)
+			{
+				sticky = false;
+				ResetJump();
+				stickyTime = 0.0;
+			}
+		}
+
 		if (jumpInputOk)
 		{
 			okTimer += delta;
@@ -157,14 +175,25 @@ public partial class Player : CharacterBody3D
 		{
 			if (jumpInputOk)
 			{
-				baseJumpForce += jumpAddition;
+				/*baseJumpForce += jumpAddition;
 				fallVelocity = baseJumpForce;
+				*/
+				Jump();
 				jumpInputOk = false;
 			}
 			else
 			{
-				baseJumpForce = jumpForceReset;
-				fallVelocity = baseJumpForce;
+				/*baseJumpForce = jumpForceReset;
+				fallVelocity = baseJumpForce;*/
+				if (!sticky)
+				{
+					ResetJump();
+				}
+				else
+				{
+					Jump();
+				}
+				//Jump();
 			}
 
 			soundToPlay.PitchScale = (float)random.NextDouble() + 0.5f;
@@ -212,6 +241,21 @@ public partial class Player : CharacterBody3D
 				}
 			}
 		}
+	}
+
+	void Jump()
+	{
+		double mod = sticky ? 0.1 : 1.0;
+
+		baseJumpForce += jumpAddition;
+		fallVelocity = baseJumpForce * mod;
+		//jumpInputOk = false;
+	}
+
+	void ResetJump()
+	{
+		baseJumpForce = jumpForceReset;
+		fallVelocity = baseJumpForce;
 	}
 
 	void UpdateFall(double delta)
@@ -268,5 +312,11 @@ public partial class Player : CharacterBody3D
 			hitShape.Disabled = true;
 			currentLevel.CheckPlayerCount();
 		}
+	}
+
+	public void MakeSticky()
+	{
+		sticky = true;
+		Jump();
 	}
 }

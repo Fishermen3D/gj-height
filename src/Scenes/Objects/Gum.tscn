@@ -9,6 +9,9 @@ size = Vector3(0.4, 0.4, 0.4)
 radius = 0.2
 height = 0.4
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ai5x"]
+size = Vector3(0.5, 0.5, 0.5)
+
 [node name="Gum" type="CharacterBody3D" unique_id=1892123417]
 collision_layer = 4
 script = ExtResource("1_7cu12")
@@ -18,3 +21,10 @@ shape = SubResource("BoxShape3D_hm387")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1587227150]
 mesh = SubResource("SphereMesh_hm387")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1681306949]
+collision_layer = 6
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=333341274]
+shape = SubResource("BoxShape3D_5ai5x")
