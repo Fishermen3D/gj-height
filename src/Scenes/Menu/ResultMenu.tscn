@@ -9,6 +9,10 @@
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="5_polc7"]
 [ext_resource type="AudioStream" uid="uid://d02yni3hvk8tb" path="res://Assets/Audio/Effects/Twang.wav" id="5_xrp5v"]
 [ext_resource type="SpriteFrames" uid="uid://cgqtkvjkvi564" path="res://Misc/GroundHitFrames.tres" id="9_j0woq"]
+[ext_resource type="Texture2D" uid="uid://b16jsb8qunndg" path="res://Assets/Images/Npcs/NPC_poodle.png" id="10_l030r"]
+[ext_resource type="Texture2D" uid="uid://4l022w8dkbht" path="res://Assets/Images/Npcs/NPC_opossum.png" id="11_n5inj"]
+[ext_resource type="Texture2D" uid="uid://brolhsg5hbsj3" path="res://Assets/Images/Npcs/NPC_fish.png" id="12_n5inj"]
+[ext_resource type="Texture2D" uid="uid://c7lyp6gg0ivj4" path="res://Assets/Images/Npcs/NPC_hyena.png" id="13_dy5x7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hm387"]
 size = Vector2(20, 20)
@@ -133,3 +137,27 @@ shaded = true
 sprite_frames = ExtResource("9_j0woq")
 frame = 8
 frame_progress = 1.0
+
+[node name="Sprite3D5" type="Sprite3D" parent="." unique_id=429390999]
+transform = Transform3D(1.5599204, 0, 0, 0, 1.5599204, 0, 0, 0, 1.5599204, 3.2843974, 1.738904, 0)
+billboard = 1
+alpha_cut = 2
+texture = ExtResource("10_l030r")
+
+[node name="Sprite3D6" type="Sprite3D" parent="." unique_id=481148901]
+transform = Transform3D(1.5599204, 0, 0, 0, 1.5599204, 0, 0, 0, 1.5599204, 4.173342, 1.0654085, 2.108051)
+billboard = 1
+alpha_cut = 2
+texture = ExtResource("11_n5inj")
+
+[node name="Sprite3D7" type="Sprite3D" parent="." unique_id=545375745]
+transform = Transform3D(1.5599204, 0, 0, 0, 1.5599204, 0, 0, 0, 1.5599204, -3.3901248, 1.0654085, 0.86359656)
+billboard = 1
+alpha_cut = 2
+texture = ExtResource("12_n5inj")
+
+[node name="Sprite3D8" type="Sprite3D" parent="." unique_id=1282474656]
+transform = Transform3D(1.5599204, 0, 0, 0, 1.5599204, 0, 0, 0, 1.5599204, -4.752801, 1.7472932, 1.9904786)
+billboard = 1
+alpha_cut = 2
+texture = ExtResource("13_dy5x7")

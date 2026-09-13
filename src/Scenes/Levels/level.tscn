@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dgi8cvivo6utx" path="res://Assets/Fonts/BBHBogle-Regular.ttf" id="6_lhx7y"]
 [ext_resource type="Texture2D" uid="uid://c328a4la2rkky" path="res://Assets/Images/Backdrop/Bg1.PNG" id="6_rv5g2"]
 [ext_resource type="PackedScene" uid="uid://ccx1n3p0idm8p" path="res://Scenes/Characters/Puffin.tscn" id="7_i5435"]
+[ext_resource type="Texture2D" uid="uid://cb5ua673v1bds" path="res://Assets/Images/Backdrop/Trees.PNG" id="7_jlsip"]
 [ext_resource type="Texture2D" uid="uid://cyvd2uhopeyxe" path="res://Assets/Images/Backdrop/Bg2.PNG" id="7_lhx7y"]
 [ext_resource type="Script" uid="uid://b1cqji7dum8rj" path="res://Scripts/Misc/BottleThrower.cs" id="9_jbixu"]
 [ext_resource type="Texture2D" uid="uid://brolhsg5hbsj3" path="res://Assets/Images/Npcs/NPC_fish.png" id="10_on2c6"]
@@ -49,6 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_hm387")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1118646342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.8417403, 0, 0, 0)
 mesh = SubResource("PlaneMesh_hm387")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1170409250]
@@ -126,6 +128,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.250919, 3.7725616, -14.360
 shaded = true
 alpha_cut = 2
 texture = ExtResource("7_lhx7y")
+
+[node name="Sprite3D13" type="Sprite3D" parent="." unique_id=1364388238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.573864, 3.3421893, -4.973272)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("7_jlsip")
+
+[node name="Sprite3D16" type="Sprite3D" parent="." unique_id=111576744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.519241, 3.3421893, -4.973272)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("7_jlsip")
+
+[node name="Sprite3D14" type="Sprite3D" parent="." unique_id=136172300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.95607, 3.3421893, 10.942566)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("7_jlsip")
+
+[node name="Sprite3D15" type="Sprite3D" parent="." unique_id=895692599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.222845, 3.3421893, 10.942566)
+shaded = true
+alpha_cut = 2
+texture = ExtResource("7_jlsip")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1284250151]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.496078, 19.44429, 0)

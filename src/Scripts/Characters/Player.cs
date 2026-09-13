@@ -84,6 +84,8 @@ public partial class Player : CharacterBody3D
 
 	AudioStreamPlayer downSound;
 
+	Sprite3D gumSprite;
+
 	public static Dictionary<CharacterType, StringName> spriteFrameGroup = new()
 	{
 		{ CharacterType.NONE, new StringName() },
@@ -133,6 +135,8 @@ public partial class Player : CharacterBody3D
 		mark.Hide();
 
 		downSound = GetNode<AudioStreamPlayer>("Down");
+		gumSprite = GetNode<Sprite3D>("GumSprite");
+		gumSprite.Hide();
 	}
 
 	public override void _Process(double delta)
@@ -147,6 +151,7 @@ public partial class Player : CharacterBody3D
 				sticky = false;
 				ResetJump();
 				stickyTime = 0.0;
+				gumSprite.Hide();
 			}
 		}
 
@@ -329,6 +334,7 @@ public partial class Player : CharacterBody3D
 	{
 		sticky = true;
 		Jump();
+		gumSprite.Show();
 	}
 
 	public void knockDown()

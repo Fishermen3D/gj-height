@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://6jjj4mmyetgw"]
 
 [ext_resource type="Script" uid="uid://d4l5hh34va2in" path="res://Scripts/Objects/Gum.cs" id="1_7cu12"]
+[ext_resource type="Texture2D" uid="uid://ub25aydql26s" path="res://Assets/Images/Gum.png" id="2_j5y16"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hm387"]
 size = Vector3(0.4, 0.4, 0.4)
-
-[sub_resource type="SphereMesh" id="SphereMesh_hm387"]
-radius = 0.2
-height = 0.4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ai5x"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -19,12 +16,13 @@ script = ExtResource("1_7cu12")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=897410861]
 shape = SubResource("BoxShape3D_hm387")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1587227150]
-mesh = SubResource("SphereMesh_hm387")
-
 [node name="Area3D" type="Area3D" parent="." unique_id=1681306949]
 collision_layer = 6
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=333341274]
 shape = SubResource("BoxShape3D_5ai5x")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1475799591]
+transform = Transform3D(0.6897543, 0, 0, 0, 0.6897543, 0, 0, 0, 0.6897543, 0, 0.117259234, 0)
+texture = ExtResource("2_j5y16")

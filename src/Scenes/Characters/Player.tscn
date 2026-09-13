@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dajx4mujnj171" path="res://Scripts/Characters/PlayerHitbox.cs" id="4_7pt4t"]
 [ext_resource type="SpriteFrames" uid="uid://bk2pjtb1kg7o2" path="res://Misc/CharacterFrames.tres" id="4_7qdam"]
 [ext_resource type="SpriteFrames" uid="uid://chob3hkfbya1w" path="res://Misc/Xmark.tres" id="6_gc10f"]
+[ext_resource type="Texture2D" uid="uid://ub25aydql26s" path="res://Assets/Images/Gum.png" id="8_w38he"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hm387"]
 
@@ -79,3 +80,9 @@ alpha_cut = 2
 sprite_frames = ExtResource("6_gc10f")
 autoplay = "default"
 frame_progress = 0.6883572
+
+[node name="GumSprite" type="Sprite3D" parent="." unique_id=261525196]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.049110115, -0.80980873, 0.2789625)
+billboard = 1
+alpha_cut = 2
+texture = ExtResource("8_w38he")
